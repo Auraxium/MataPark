@@ -26,7 +26,8 @@ mongoose.connect(URI, {
 .catch((err) => console.log(err));
 
 app.get("/load", (req, res) => {
-	res.sendFile(__dirname + "/permits.json")
+	//res.sendFile(__dirname + "/permits.json")
+	permitModel.find().then(arr => res.json(arr))
 })
 
 app.post("/save", (req, res) => {
@@ -48,5 +49,9 @@ app.post("/save", (req, res) => {
 
  // return res.end("File saved.");
 });
+
+app.delete("/delete/:id", (req, res) => {
+	permitModel.findByIdAndDelete(req.params.id)
+})
 
 app.listen(8080, null, () => console.log("Running"));
