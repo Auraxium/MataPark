@@ -22,7 +22,7 @@ mongoose.connect(URI, {
 	useUnifiedTopology: true,
 
 })
-.then(() => console.log("db connected"))
+.then(() => console.log("connected to database"))
 .catch((err) => console.log(err));
 
 app.get("/load", (req, res) => {
@@ -51,7 +51,8 @@ app.post("/save", (req, res) => {
 });
 
 app.delete("/delete/:id", (req, res) => {
-	permitModel.findByIdAndDelete(req.params.id)
+	console.log("test");
+	permitModel.findByIdAndDelete(req.params.id).then(() => console.log("deleted permit")).catch((err) => console.log(err))
 })
 
 app.listen(8080, null, () => console.log("Running"));

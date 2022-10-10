@@ -8,9 +8,9 @@ var port = "http://localhost:8080";
 
 const PermitUI = (props) => (
   <div className="border">
-    <p className="lead">License: {props.ind.license}</p>
-    <p className="lead">Expires: {props.ind.expires}</p>
-    <a href="#" onClick={props.delete} >delete</a>
+    <p className="lead">License: {props.data.license}</p>
+    <p className="lead">Expires: {props.data.expires}</p>
+    <button href="" onClick={() => props.delete(props.data._id)} >delete</button>
   </div>
 );
 
@@ -20,26 +20,21 @@ function App() {
   useEffect(() => {
     axios.get(port + "/load").then((res) => {
       permits = res.data;
-      console.log(permits);v 
-      let str = "";
-      //$('#msg').html(() => {for (let i = 0; i < permits.length; i++)
-      //	str += JSON.stringify(permits[i]) + "<br/>"
-
+      console.log(permits);
       ListPermits();
-
-      //return str
-      //})
     });
   }, []);
 
   function deletePermit(id) {
-    axios.delete(port + "/delete/" + id);
+    console.log("i ran")
+    axios.delete(port + "/delete/" + id).then(() => console.log("Deleted permit").catch((err) => console.log("Failed to delete: " + err)));
+    permits = permits.filter(el => el._id !== id)
     ListPermits();
   }
 
   function ListPermits() {
     ReactDOM.render(
-      permits.map((i) => <PermitUI ind={i} key={i._id} delete={deletePermit(i._id)}/>),
+      permits.map((i) => <PermitUI data={i} key={i._id} delete={deletePermit}/>),
       document.getElementById("msg")
     );
   }
@@ -47,12 +42,6 @@ function App() {
   function onSubmit() {
     let permit = { license: $("#license").val(), expires: $("#hours").val() };
     permits.push(permit);
-    let str = "";
-    //$('#msg').html(() => {for (let i = 0; i < permits.length; i++)
-    //		str += JSON.stringify(permits[i]) + "<br/>"
-    //
-    //	return str
-    //})
     ListPermits();
 
     axios
