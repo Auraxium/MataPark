@@ -30,10 +30,7 @@ function BuyDailyPass() {
       .delete(port + "/delete/" + id)
       .then(() => console.log("asd"))
       .catch((err) => console.log("Failed to delete: " + err));
-    //permits = permits.filter((el) => el._id !== id);
-    $("#"+id).remove();
-    
-    
+    permits = permits.filter((el) => el._id !== id);
   }
 
   function ListPermits() {
