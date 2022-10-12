@@ -72,7 +72,7 @@ function BuyDailyPass() {
         <button className="btn btn-secondary" onClick={onSubmit}>
           Submit
         </button>
-        <div id="msg" className="d-flex flex-column"></div>
+        <div id="msg" className="d-flex flex-column-reverse"></div>
       </div>
     </>
   );
