@@ -1,86 +1,15 @@
-import "bootstrap/dist/css/bootstrap.css";
-import { useEffect } from "react";
-import ReactDOM from "react-dom";
-import $ from "jquery";
-import axios from "axios";
+import Homepage from './components/Homepage'
+import Navbar from './components/Navbar';
+import BuyDailyPass from './components/BuyDailyPass';
+import { BrowserRouter as Router, Route} from "react-router-dom";
 
-var port = "http://localhost:8080";
-
-const PermitUI = (props) => (
-  <div className="border" id={`${props.data._id}`}>
-    <p className="lead">License: {props.data.license}</p>
-    <p className="lead">Expires: {props.data.expires}</p>
-    <button href="" onClick={(e) => {
-      props.delete(props.data._id);
-      $(e.target.parent).remove()
-      }}>delete
-    </button>
-  </div>
-);
 
 function App() {
-  let permits = [];
-
-  useEffect(() => {
-    ListPermits();
-  }, []);
-
-  function deletePermit(id) {
-    axios
-      .delete(port + "/delete/" + id)
-      .then(() => console.log("asd"))
-      .catch((err) => console.log("Failed to delete: " + err));
-    //permits = permits.filter((el) => el._id !== id);
-    $("#"+id).remove();
-    
-    
-  }
-
-  function ListPermits() {
-    axios
-      .get(port + "/load")
-      .then((res) => {
-        permits = res.data;
-        console.log(permits);
-        ReactDOM.render(
-          permits.map((i) => (
-            <PermitUI data={i} key={i._id} delete={deletePermit} />
-          )),
-          document.getElementById("msg")
-        );
-      })
-      .catch((err) => console.log("Falied to get: " + err));
-  }
-
-  function onSubmit() {
-    let permit = { license: $("#license").val(), expires: $("#hours").val()};
-    //permits.push(permit);
-
-    axios
-      .post(port + "/save", permit)
-      .then(() => {
-        console.log("saved");
-        ListPermits();
-      })
-      .catch(() => console.log("failed"));
-  }
 
   return (
     <>
-      <div className="bg-danger">
-        <h1 className=""> MataPark </h1>
-      </div>
-
-      <div className="row col-5 px-3">
-        <div>License Plate</div>
-        <input className="form-control mb-3" id="license"></input>
-        <div>Time</div>
-        <input className="form-control mb-3" id="hours"></input>
-        <button className="btn btn-secondary" onClick={onSubmit}>
-          Submit
-        </button>
-        <div id="msg" className="d-flex flex-column"></div>
-      </div>
+      <Navbar/>
+      <Homepage/>
     </>
   );
 }
