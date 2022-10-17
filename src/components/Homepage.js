@@ -16,6 +16,7 @@ function Homepage() {
         <button className="btn btn-success">Extend Pass</button>
         <button className="btn btn-warning">Locate lot</button>
         <button className="btn btn-danger">Purchase Semester Pass</button>
+        <button className="btn btn-primary" onClick={()=> nav("/Calculate")}> Calculate (Semester vs Day to Day)</button>
         <div>asd</div>
       </div>
     </>
