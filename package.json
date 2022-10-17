@@ -2,7 +2,7 @@
   "name": "MataPark",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/BuyDailyPass",
+  "homepage": ".",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -10,6 +10,7 @@
     "axios": "^1.1.2",
     "body-parser": "^1.20.1",
     "bootstrap": "^5.2.2",
+    "concurrently": "^7.4.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "jquery": "^3.6.1",
@@ -23,7 +24,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently --kill-others \"npm run dev\" \"npm run server\"",
     "dev": "react-scripts start",
     "server": "npx nodemon server.js",
     "build": "react-scripts build",
