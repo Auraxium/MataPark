@@ -1,6 +1,7 @@
 import Homepage from './components/Homepage'
 import Navbar from './components/Navbar';
 import BuyDailyPass from './components/BuyDailyPass';
+import Calculate from './components/Calculate';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
@@ -13,6 +14,7 @@ function App() {
         <Routes>
           <Route path='/' extact element={<Homepage/>} />
           <Route path='/BuyDailyPass' element={<BuyDailyPass/>} />
+          <Route path='/Calculate' element={<Calculate/>}/>
         </Routes>
       </Router>
       
