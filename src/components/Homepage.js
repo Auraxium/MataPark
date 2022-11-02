@@ -5,7 +5,7 @@ function Homepage() {
   let nav = useNavigate();
   return (
     <div className="container">
-      <div className="row text-center text-white bg-dark ">
+      <div className="row text-center text-white bg-black ">
         <div className="col-3 py-4">Student Parking</div>
         <div className="col-3 py-4">Faculty/Staff Parking</div>
         <div className="col-3 py-4">Visitor Parking</div>
@@ -17,18 +17,20 @@ function Homepage() {
           <div className="mb-1 font-big">Contact Us</div>
           <p className="">
             {`Parking and Transportation Services
-© California State University, Northridge
-18111 Nordhoff Street, Northridge, CA 91330
-Phone: (818) 677-1200 / Contact Us`}
+              © California State University, Northridge
+              18111 Nordhoff Street, Northridge, CA 91330
+              Phone: (818) 677-1200 / Contact Us`}
           </p>
         </div>
 
-        <div className="col-7 text-center">
+        <div className="col-7 text-center ">
           <div className="" style={{ fontSize: "27px" }}>
             Parking Information
           </div>
-          {'<img src="ph" alt="" />'}
-          <p className="">
+          <img
+          src="https://www.csun.edu/sites/default/files/field_image/field_slideshow_slides/_OGF1846-Edit-Edit%20-%20PEO_0.jpg"
+          alt="" position='absolute' width='599' height='234'/>
+          <p className="mt-4">
             CSUN has transitioned to a “virtual parking permit campus” using the
             license plate number of the vehicle in place of a physical parking
             decal. All CSUN Parking Permits are all now virtual parking permits.
