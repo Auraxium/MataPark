@@ -9,7 +9,6 @@ html, body {
 	flex-direction: column !important;
 
 	/* font-family: "Lucida Console", monospace !important; */
-	background-color: rgb(7, 7,  7) !important;
 
 	/* overflow: hidden; */
 }
@@ -31,4 +30,21 @@ html, body {
 
 ::-webkit-scrollbar {
 	display: none !important;
+}
+
+.dot {
+	border-style: dotted;
+	border-width: 1px;
+}
+
+.grey {
+	background-color: #d5d5d5;
+}
+
+.font-big {
+	font-size: 27px;
+}
+
+.bg-dark > div {
+	font-size: 20px;
 }
