@@ -29,7 +29,7 @@ function Homepage() {
           </div>
           <img
           src="https://www.csun.edu/sites/default/files/field_image/field_slideshow_slides/_OGF1846-Edit-Edit%20-%20PEO_0.jpg"
-          alt="" position='absolute' width='599' height='234'/>
+          alt="" position='absolute' width='80%' style={{aspectRatio: "16/7"}}/>
           <p className="mt-4">
             CSUN has transitioned to a “virtual parking permit campus” using the
             license plate number of the vehicle in place of a physical parking
