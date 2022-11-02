@@ -48,3 +48,7 @@ html, body {
 .bg-black > div {
 	font-size: 20px;
 }
+
+.bg-black:hover {
+	cursor: pointer;
+}
