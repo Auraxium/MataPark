@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link, useNavigate } from "react-router-dom";
 
-export default function StudentParking() {
+function StudentParking() {
     let nav = useNavigate();
     return (
         <div className="container">
@@ -72,3 +73,5 @@ export default function StudentParking() {
         </div>
     );
 }
+
+export default StudentParking;
