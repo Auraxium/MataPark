@@ -27,10 +27,19 @@ function StudentParking() {
                 <div className="" style={{ fontSize: "27px" }}>
                     Student Parking Information
                 </div>
-                {/* <img
-                src="https://www.csun.edu/sites/default/files/field_image/field_slideshow_slides/_OGF1846-Edit-Edit%20-%20PEO_0.jpg"
-                alt="" position='absolute' width='80%' style={{aspectRatio: "16/7"}}/> */}
-                <p className="mt-4">
+                <img
+                src="./Images/ParkingB1.png"
+                alt="" position='absolute'/>
+                <img
+                src="./Images/ParkingB3.png"
+                alt="" position='absolute' width='80%' style={{aspectRatio: "16/7"}}/>
+                <img
+                src="./Images/ParkingB5.png"
+                alt="" position='absolute' width='80%' style={{aspectRatio: "16/7"}}/>
+                <img
+                src="./Images/ParkingB6.png"
+                alt="" position='absolute' width='80%' style={{aspectRatio: "16/7"}}/>
+                <p>
                 Students can purchase a semester permit or a daily parking permit to park. Student parking lots are: 
                     <ul>
                         <li>Lots B1, B3 parking structure & B5 parking structure, located off of Darby Street. </li>
