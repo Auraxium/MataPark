@@ -52,3 +52,7 @@ html, body {
 .bg-black:hover {
 	cursor: pointer;
 }
+
+.highlight{
+	border: 5px solid red;
+}
