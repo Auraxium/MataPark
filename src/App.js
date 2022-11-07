@@ -15,6 +15,7 @@ function App() {
           <Route path='/' extact element={<Homepage/>} />
           <Route path='/BuyDailyPass' element={<BuyDailyPass/>} />
           <Route path='/Calculate' element={<Calculate/>}/>
+          <Route path='/StudentParking' element={<StudentParking/>}/>
         </Routes>
       </Router>
       
