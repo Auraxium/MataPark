@@ -2,6 +2,7 @@ import Homepage from './components/Homepage'
 import Navbar from './components/Navbar';
 import BuyDailyPass from './components/BuyDailyPass';
 import Calculate from './components/Calculate';
+import StudentParking from './components/StudentParking';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
@@ -15,7 +16,7 @@ function App() {
           <Route path='/' extact element={<Homepage/>} />
           <Route path='/BuyDailyPass' element={<BuyDailyPass/>} />
           <Route path='/Calculate' element={<Calculate/>}/>
-          {/* <Route path='/StudentParking' element={<StudentParking/>}/> */}
+          <Route path='/StudentParking' element={<StudentParking/>}/>
         </Routes>
       </Router>
       

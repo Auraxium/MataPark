@@ -6,7 +6,7 @@ function Homepage() {
   return (
     <div className="container">
       <div className="row text-center text-white bg-black ">
-        <div className="col-3 py-4" /* onClick={() => nav("/StudentParking")} */><Link to="/StudentParking">Student Parking</Link></div>
+        <div className="col-3 py-4" onClick={() => nav("/StudentParking")}>Student Parking</div>
         <div className="col-3 py-4">Faculty/Staff Parking</div>
         <div className="col-3 py-4">Visitor Parking</div>
         <div className="col-3 py-4">Diasability Parking</div>
