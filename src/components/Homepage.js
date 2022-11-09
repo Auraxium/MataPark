@@ -9,7 +9,7 @@ function Homepage() {
         <div className="col-3 py-4" onClick={() => nav("/StudentParking")}>Student Parking</div>
         <div className="col-3 py-4">Faculty/Staff Parking</div>
         <div className="col-3 py-4">Visitor Parking</div>
-        <div className="col-3 py-4">Diasability Parking</div>
+        <div className="col-3 py-4">Disability Parking</div>
       </div>
 
       <div className="row">
