@@ -105,6 +105,10 @@ p, li{
 	font-size: 27px;
 }
 
+.btn-danger{
+	background-color: #D22030;
+}
+
 .bg-black > div {
 	font-size: 20px;
 }
@@ -114,5 +118,5 @@ p, li{
 }
 
 .highlight{
-	border: 5px solid #d9534f;
+	border: 5px solid #E64B36;
 }
