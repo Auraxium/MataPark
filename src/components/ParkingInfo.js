@@ -6,10 +6,10 @@ function StudentParking() {
     return (
         <div className="container">
             <div className="row text-center text-white bg-black ">
-                <div className="col-3 py-4 highlight">Student Parking</div>
-                <div className="col-3 py-4">Faculty/Staff Parking</div>
-                <div className="col-3 py-4">Visitor Parking</div>
-                <div className="col-3 py-4">Diasability Parking</div>
+                <div className="col-3 py-4 highlight" onClick={() => nav("/ParkingInfo")}>Parking Information</div>
+                <div className="col-3 py-4" onClick={() => nav("/Calculate")}>Permit Calculator</div>
+                <div className="col-3 py-4">Parking Availability</div>
+                <div className="col-3 py-4">Accessibility</div>
             </div>
 
             <div className="row">

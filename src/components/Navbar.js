@@ -5,8 +5,9 @@ export default function Navbar() {
   let nav = useNavigate()
   return (
    <>
-    <div className="bg-danger mb-2 p-1 text-white">
-      <h1 className="col-2" style={{"cursor": "pointer"}} onClick={() => nav("/")}>MataPark</h1>
+    <div className="bg-danger mb-2 p-1 text-white row justify-content-between">
+      <h1 className="col-2" style={{"cursor": "pointer", "text-align":"left","display": "inline-block","margin-left": "1rem"}} onClick={() => nav("/")}>MataPark</h1>
+      <h2 className="col-2" style={{"cursor": "pointer","text-align":"right", "display": "inline-block","margin-right": "1rem","margin-top": "0.5rem"}} onClick={() => nav("/Login")}>Login</h2>
     </div>
   </>
 
