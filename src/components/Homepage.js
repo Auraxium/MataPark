@@ -5,7 +5,7 @@ function Homepage() {
   let nav = useNavigate();
   return (
     <div className="container">
-      <div className="row text-center text-white bg-black">
+      <div className="row text-center text-white bg-black tab-header">
         <div className="col-3 py-4" onClick={() => nav("/ParkingInfo")}>Parking Information</div>
         <div className="col-3 py-4" onClick={() => nav("/Calculate")}>Permit Calculator</div>
         <div className="col-3 py-4">Parking Availability</div>
@@ -14,7 +14,7 @@ function Homepage() {
 
       <div className="row">
         <div className="col grey">
-          <div className="mb-1 font-big">Contact Us</div>
+          <div className="mb-1 font-big h2">Contact Us</div>
           <p className="">
             {`Parking and Transportation Services
               © California State University, Northridge
@@ -50,10 +50,10 @@ function Homepage() {
         </div>
 
         <div className="col grey pb-2">
-          <div className="text-center mb-1" style={{ fontSize: "27px" }}>
+          <div className="text-center mb-1 h2" style={{ fontSize: "27px" }}>
             Online Parking Services
           </div>
-          <div className="row justify-content-center gy-1">
+          <div className="row justify-content-center gy-1 btn-text">
             <button
               className="btn btn-danger col-10"
               onClick={() => nav("/BuyDailyPass")}
@@ -69,7 +69,7 @@ function Homepage() {
         </div>
         <footer className="sticky-bottom">
         <button
-              className="btn btn-danger col-2" style=
+              className="btn btn-danger col-2 btn-text" style=
               {{"position": "absolute",
               "left": "75vw",
               "bottom":"3vh"}}
