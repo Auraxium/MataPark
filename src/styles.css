@@ -14,7 +14,7 @@ html, body {
 }
 
 * {
-	box-sizing: border-box !important;
+	/* box-sizing: border-box !important; */
 	/* color: rgb(221, 221, 221) !important; */
 
 	-webkit-touch-callout: none !important;
