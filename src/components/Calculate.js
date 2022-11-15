@@ -37,12 +37,14 @@ const MiddleContent = () => (
     </div>
     
     <p className="mt-4">
-      Below select the hours you plan to be at school, be mindful of gaps
+      Below select the hours you plan to be at school, be mindful of gaps.
+      Not all lots offer 1hr options find a designated ticket dispenser
     </p>
 <form>
 <div class="form-group">
     <label for="exampleFormControlSelect1">Monday</label>
     <select class="form-control" id="Monday">
+      <option value="0"> Not coming</option>
       <option value="3">1hr</option>
       <option value="5.5">2hr</option>
       <option value="7.5">2-4hr</option>
@@ -53,6 +55,7 @@ const MiddleContent = () => (
   <div class="form-group">
     <label for="exampleFormControlSelect1">Tuesday</label>
     <select class="form-control" id="Tuesday">
+      <option value="0"> Not coming</option>
       <option value="3">1hr</option>
       <option value="5.5">2hr</option>
       <option value="7.5">2-4hr</option>
@@ -63,6 +66,7 @@ const MiddleContent = () => (
   <div class="form-group">
     <label for="exampleFormControlSelect1">Wednesday</label>
     <select class="form-control" id="Wednesday">
+      <option value="0"> Not coming</option>
       <option value="3">1hr</option>
       <option value="5.5">2hr</option>
       <option value="7.5">2-4hr</option>
@@ -73,6 +77,7 @@ const MiddleContent = () => (
   <div class="form-group">
     <label for="exampleFormControlSelect1">Thursday</label>
     <select class="form-control" id="Thursday">
+      <option value="0"> Not coming</option>
       <option value="3">1hr</option>
       <option value="5.5">2hr</option>
       <option value="7.5">2-4hr</option>
@@ -83,6 +88,7 @@ const MiddleContent = () => (
   <div class="form-group">
     <label for="exampleFormControlSelect1">Friday</label>
     <select class="form-control" id="Friday">
+      <option value="0"> Not coming</option>
       <option value="3">1hr</option>
       <option value="5.5">2hr</option>
       <option value="7.5">2-4hr</option>
@@ -93,6 +99,7 @@ const MiddleContent = () => (
   <div class="form-group">
     <label for="exampleFormControlSelect1">Saturday</label>
     <select class="form-control" id="Saturday">
+      <option value="0"> Not coming</option>
       <option value="3">1hr</option>
       <option value="5.5">2hr</option>
       <option value="7.5">2-4hr</option>
