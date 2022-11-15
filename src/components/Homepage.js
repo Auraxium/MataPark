@@ -31,24 +31,6 @@ const MiddleContent = () => (
       permit (Semester, Annual, or Daily) at all times. Thank You!
     </p>
     <hr />
-    <p className="">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </p>
-    <p className="">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.
-    </p>
   </div>
 );
 
@@ -82,19 +64,19 @@ function Homepage() {
           </div>
           <div
             className="col-3 py-4"
-            onClick={(e) => {
-              $(".highlight").toggleClass("highlight");
-              $(e.target).addClass("highlight");
-            }}
+            // onClick={(e) => {
+            //   $(".highlight").toggleClass("highlight");
+            //   $(e.target).addClass("highlight");
+            // }}
           >
             Parking Availability
           </div>
           <div
             className="col-3 py-4"
-            onClick={(e) => {
-              $(".highlight").toggleClass("highlight");
-              $(e.target).addClass("highlight");
-            }}
+            // onClick={(e) => {
+            //   $(".highlight").toggleClass("highlight");
+            //   $(e.target).addClass("highlight");
+            // }}
           >
             Accessibility
           </div>
@@ -131,7 +113,7 @@ function Homepage() {
               >
                 Locate Lot
               </button>
-              <button className="btn btn-danger col-10">
+              <button className="btn btn-danger col-10" onClick={() => window.location.href = 'https://www.csun.edu/sites/default/files/student_refund_schedule_2022-2023.pdf'}>
                 Purchase Semester Pass
               </button>
               <button

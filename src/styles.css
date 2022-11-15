@@ -124,3 +124,10 @@ p, li{
 .ll-hl {
 	background-color: rgb(0, 107, 0)green;
 }
+
+.fade:not(.show){
+	opacity: unset;
+}
+.tt {
+	background-color: #ff0000;
+}
