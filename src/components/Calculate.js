@@ -9,78 +9,86 @@ const MiddleContent = () => (
   <div className="col-7 text-center ">
     <div className="" style={{ fontSize: "27px" }}>
       <h1>Calculator</h1>
+      <h3> Compare daily pass to semester pass</h3>
     </div>
     
     <p className="mt-4">
-      Figure out whether it is better to buy daily pass or 
-      semester pass according to your schedule
+      Below select the hours you plan to be at school, be mindful of gaps
     </p>
 <form>
 <div class="form-group">
     <label for="exampleFormControlSelect1">Monday</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1hr</option>
-      <option>2hr</option>
-      <option>2-4hr</option>
-      <option>4+hr</option>
+    <select class="form-control" id="Monday">
+      <option value="1">1hr</option>
+      <option value="2">2hr</option>
+      <option value="3">2-4hr</option>
+      <option value="4">4+hr</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Tuesday</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1hr</option>
-      <option>2hr</option>
-      <option>2-4hr</option>
-      <option>4+hr</option>
+    <select class="form-control" id="Tuesday">
+      <option value="1">1hr</option>
+      <option value="2">2hr</option>
+      <option value="3">2-4hr</option>
+      <option value="4">4+hr</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Wednesday</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1hr</option>
-      <option>2hr</option>
-      <option>2-4hr</option>
-      <option>4+hr</option>
+    <select class="form-control" id="Wednesday">
+      <option value="1">1hr</option>
+      <option value="2">2hr</option>
+      <option value="3">2-4hr</option>
+      <option value="4">4+hr</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Thursday</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1hr</option>
-      <option>2hr</option>
-      <option>2-4hr</option>
-      <option>4+hr</option>
+    <select class="form-control" id="Thursday">
+      <option value="1">1hr</option>
+      <option value="2">2hr</option>
+      <option value="3">2-4hr</option>
+      <option value="4">4+hr</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Friday</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1hr</option>
-      <option>2hr</option>
-      <option>2-4hr</option>
-      <option>4+hr</option>
+    <select class="form-control" id="Friday">
+    <option value="1">1hr</option>
+      <option value="2">2hr</option>
+      <option value="3">2-4hr</option>
+      <option value="4">4+hr</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Saturday</label>
-    <select class="form-control" id="exampleFormControlSelect1">
-      <option>1hr</option>
-      <option>2hr</option>
-      <option>2-4hr</option>
-      <option>4+hr</option>
+    <select class="form-control" id="Saturday">
+    <option value="1">1hr</option>
+      <option value="2">2hr</option>
+      <option value="3">2-4hr</option>
+      <option value="4">4+hr</option>
     </select>
   </div>
 
 </form>
-    
+<button type="button" onClick="cal()">Calculate</button>
 
   </div>
 );
+function cal(){
+  var m1 = document.getElementById("Monday")
+  var m1field = parseInt(m1.options[m1.selectedIndex].value);
+
+  var alertMessage = 'So far' + m1field;
+  alert(alertMessage);
+}
+
 function Calculate() {
   let nav = useNavigate();
   var [main, SetMain] = useState(MiddleContent);
