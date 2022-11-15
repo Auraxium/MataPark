@@ -72,7 +72,7 @@ export default function LocateLot() {
         </div>
 
         <div className="col-4">
-          <div className="">Search building name</div>
+          <div className="font-big">Search building name</div>
           <input className='form-control mb-1' type="text" onChange={(e) => {
             SetBuildState(buildings.filter(el => el.name.toLocaleLowerCase().includes(e.target.value.toLocaleLowerCase())))
           }} />

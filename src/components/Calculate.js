@@ -23,9 +23,9 @@ function calu() {
   var s1field = parseFloat(s1.options[s1.selectedIndex].value);
 
   var alertMessage =
-    "It would cost you: " +
+    "It would cost you: $" +
     (m1field + t1field + w1field + tr1field + f1field + s1field) * 16 +
-    " Currently the parking pass for the semester is about $220";
+    " total. Currently the parking pass for the semester is about $220";
   alert(alertMessage);
 }
 
