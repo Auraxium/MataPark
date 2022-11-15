@@ -2,9 +2,10 @@ import React from "react";
 import ParkingInfo from "./ParkingInfo";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import $ from "jquery";
 
 const MiddleContent = () => (
-  <div className="col-7 text-center ">
+  <div className="col-7 text-center m-0">
     <div className="" style={{ fontSize: "27px" }}>
       <h1>Welcome</h1>
     </div>
@@ -53,65 +54,95 @@ const MiddleContent = () => (
 
 function Homepage() {
   let nav = useNavigate();
-
   var [main, SetMain] = useState(MiddleContent);
 
   return (
-    <div className="container px-2">
-      <div className="row text-center text-white bg-black tab-header">
-        <div className="col-3 py-4" onClick={() => SetMain(ParkingInfo)}>
-          Parking Information
+    <div className="d-flex justify-content-center">
+      <div className="col-11">
+        <div className="d-flex m-0 text-center text-white bg-black tab-header">
+          <div
+            className="col-3 py-4 highlight"
+            onClick={(e) => {
+              SetMain(MiddleContent);
+              $(".highlight").toggleClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
+          >
+            Home
+          </div>
+          <div
+            className="col-3 py-4"
+            onClick={(e) => {
+              SetMain(ParkingInfo);
+              $(".highlight").toggleClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
+          >
+            Parking Information
+          </div>
+          <div
+            className="col-3 py-4"
+            onClick={(e) => {
+              $(".highlight").toggleClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
+          >
+            Parking Availability
+          </div>
+          <div
+            className="col-3 py-4"
+            onClick={(e) => {
+              $(".highlight").toggleClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
+          >
+            Accessibility
+          </div>
         </div>
-        <div className="col-3 py-4" onClick={() => nav("/Calculate")}>
-          Permit Calculator
-        </div>
-        <div className="col-3 py-4">Parking Availability</div>
-        <div className="col-3 py-4">Accessibility</div>
-      </div>
 
-      <div className="row">
-        <div className="col grey">
-          <div className="mb-1 font-big h2">Contact Us</div>
-          <p className="">
-            {`Parking and Transportation Services
+        <div className="row m-0">
+          <div className="col grey">
+            <div className="mb-1 font-big h2">Contact Us</div>
+            <p className="">
+              {`Parking and Transportation Services
               © California State University, Northridge
               18111 Nordhoff Street, Northridge, CA 91330
               Phone: (818) 677-1200 / Contact Us`}
-          </p>
-        </div>
-
-        {main}
-
-        <div className="col grey pb-2">
-          <div className="text-center mb-1 h2" style={{ fontSize: "27px" }}>
-            Online Parking Services
+            </p>
           </div>
-          <div className="row justify-content-center gy-1 btn-text">
-            <button
-              className="btn btn-danger col-10"
-              onClick={() => nav("/BuyDailyPass")}
-            >
-              Buy Daily Pass
-            </button>
-            <button className="btn btn-danger col-10">Extend Pass</button>
-            <button
-              className="btn btn-danger col-10"
-              onClick={() => nav("/LocateLot")}
-            >
-              Locate Lot
-            </button>
-            <button className="btn btn-danger col-10">
-              Purchase Semester Pass
-            </button>
-            <button
-              className="btn btn-danger col-10"
-              onClick={() => nav("/Calculate")}
-            >
-              Calculate (Semester vs Day to Day)
-            </button>
+
+          {main}
+
+          <div className="col grey pb-2">
+            <div className="text-center mb-1 h2" style={{ fontSize: "27px" }}>
+              Online Parking Services
+            </div>
+            <div className="row justify-content-center gy-1 btn-text">
+              <button
+                className="btn btn-danger col-10"
+                onClick={() => nav("/BuyDailyPass")}
+              >
+                Buy Daily Pass
+              </button>
+              <button className="btn btn-danger col-10">Extend Pass</button>
+              <button
+                className="btn btn-danger col-10"
+                onClick={() => nav("/LocateLot")}
+              >
+                Locate Lot
+              </button>
+              <button className="btn btn-danger col-10">
+                Purchase Semester Pass
+              </button>
+              <button
+                className="btn btn-danger col-10"
+                onClick={() => nav("/Calculate")}
+              >
+                Calculate (Semester vs Day to Day)
+              </button>
+            </div>
           </div>
-        </div>
-        <footer className="sticky-bottom">
+          {/* <footer className="sticky-bottom">
           <button
             className="btn btn-danger col-2 btn-text"
             style={{ position: "absolute", left: "75vw", bottom: "3vh" }}
@@ -127,7 +158,8 @@ function Homepage() {
           >
             <p>Created By Team Sensci - Fall 2022</p>
           </div>
-        </footer>
+        </footer> */}
+        </div>
       </div>
     </div>
   );
