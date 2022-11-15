@@ -68,8 +68,8 @@ var ListBuildings = () => buildings.map((el, i) => <BuildingUI name={el.name} in
         </div>
 
         <div className="col-4">
-          <div className="">Search building name</div>
-          <input className='form-control mb-1' type="text" />
+          <div className="">Select building name</div>
+          {/* <input className='form-control mb-1' type="text" /> */}
           {ListBuildings()}
         </div>
 
