@@ -25,8 +25,8 @@ function calu(){
   var s1 = document.getElementById("Saturday")
   var s1field = parseInt(s1.options[s1.selectedIndex].value);
 
-  var alertMessage = 'So far' + m1field +t1field +w1field +tr1field 
-  +f1field+s1field;
+  var alertMessage = 'It would cost you: ' +((m1field +t1field +w1field +tr1field 
+  +f1field+s1field)*16) + ' Currently the parking pass for the semester is about $220';
   alert(alertMessage);
 }
 const MiddleContent = () => (
@@ -43,65 +43,65 @@ const MiddleContent = () => (
 <div class="form-group">
     <label for="exampleFormControlSelect1">Monday</label>
     <select class="form-control" id="Monday">
-      <option value="1">1hr</option>
-      <option value="2">2hr</option>
-      <option value="3">2-4hr</option>
-      <option value="4">4+hr</option>
+      <option value="3">1hr</option>
+      <option value="5.5">2hr</option>
+      <option value="7.5">2-4hr</option>
+      <option value="9.5">4+hr</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Tuesday</label>
     <select class="form-control" id="Tuesday">
-      <option value="1">1hr</option>
-      <option value="2">2hr</option>
-      <option value="3">2-4hr</option>
-      <option value="4">4+hr</option>
+      <option value="3">1hr</option>
+      <option value="5.5">2hr</option>
+      <option value="7.5">2-4hr</option>
+      <option value="9.5">4+hr</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Wednesday</label>
     <select class="form-control" id="Wednesday">
-      <option value="1">1hr</option>
-      <option value="2">2hr</option>
-      <option value="3">2-4hr</option>
-      <option value="4">4+hr</option>
+      <option value="3">1hr</option>
+      <option value="5.5">2hr</option>
+      <option value="7.5">2-4hr</option>
+      <option value="9.5">4+hr</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Thursday</label>
     <select class="form-control" id="Thursday">
-      <option value="1">1hr</option>
-      <option value="2">2hr</option>
-      <option value="3">2-4hr</option>
-      <option value="4">4+hr</option>
+      <option value="3">1hr</option>
+      <option value="5.5">2hr</option>
+      <option value="7.5">2-4hr</option>
+      <option value="9.5">4+hr</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Friday</label>
     <select class="form-control" id="Friday">
-    <option value="1">1hr</option>
-      <option value="2">2hr</option>
-      <option value="3">2-4hr</option>
-      <option value="4">4+hr</option>
+      <option value="3">1hr</option>
+      <option value="5.5">2hr</option>
+      <option value="7.5">2-4hr</option>
+      <option value="9.5">4+hr</option>
     </select>
   </div>
 
   <div class="form-group">
     <label for="exampleFormControlSelect1">Saturday</label>
     <select class="form-control" id="Saturday">
-    <option value="1">1hr</option>
-      <option value="2">2hr</option>
-      <option value="3">2-4hr</option>
-      <option value="4">4+hr</option>
+      <option value="3">1hr</option>
+      <option value="5.5">2hr</option>
+      <option value="7.5">2-4hr</option>
+      <option value="9.5">4+hr</option>
     </select>
   </div>
 
 </form>
-<button type="button" onClick="calu()">Calculate</button>
+<button type="button" onClick={() => calu()}>Calculate</button>
 
   </div>
 );
