@@ -2,12 +2,10 @@ import React from "react";
 import ParkingInfo from "./ParkingInfo";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import $ from 'jquery'
-
-
+import $ from "jquery";
 
 const MiddleContent = () => (
-  <div className="col-7 text-center ">
+  <div className="col-7 text-center m-0">
     <div className="" style={{ fontSize: "27px" }}>
       <h1>Welcome</h1>
     </div>
@@ -59,19 +57,50 @@ function Homepage() {
   var [main, SetMain] = useState(MiddleContent);
 
   return (
-      <div className="col-11 row justify-content-center">
-        <div className="row text-center text-white bg-black tab-header ">
-          <div className="col-3 py-4 highlight" onClick={() => {SetMain(MiddleContent)}}>
+    <div className="d-flex justify-content-center">
+      <div className="col-11">
+        <div className="d-flex m-0 text-center text-white bg-black tab-header">
+          <div
+            className="col-3 py-4 highlight"
+            onClick={(e) => {
+              SetMain(MiddleContent);
+              $(".highlight").toggleClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
+          >
             Home
           </div>
-          <div className="col-3 py-4" onClick={(e) => {SetMain(ParkingInfo); $('.highlight').toggleClass('highlight'); e.target.addClass('highlight')}}>
+          <div
+            className="col-3 py-4"
+            onClick={(e) => {
+              SetMain(ParkingInfo);
+              $(".highlight").toggleClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
+          >
             Parking Information
           </div>
-          <div className="col-3 py-4">Parking Availability</div>
-          <div className="col-3 py-4">Accessibility</div>
+          <div
+            className="col-3 py-4"
+            onClick={(e) => {
+              $(".highlight").toggleClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
+          >
+            Parking Availability
+          </div>
+          <div
+            className="col-3 py-4"
+            onClick={(e) => {
+              $(".highlight").toggleClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
+          >
+            Accessibility
+          </div>
         </div>
 
-        <div className="row">
+        <div className="row m-0">
           <div className="col grey">
             <div className="mb-1 font-big h2">Contact Us</div>
             <p className="">
@@ -132,6 +161,7 @@ function Homepage() {
         </footer> */}
         </div>
       </div>
+    </div>
   );
 }
 

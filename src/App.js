@@ -12,13 +12,13 @@ function App() {
   return (
     <>
       <Router>
-        {/* <Navbar/> */}
+        <Navbar/>
         <Routes>
           <Route path='/' extact element={<Homepage/>} />
-          {/* <Route path='/BuyDailyPass' element={<BuyDailyPass/>} />
+          <Route path='/BuyDailyPass' element={<BuyDailyPass/>} />
           <Route path='/Calculate' element={<Calculate/>}/>
           <Route path='/LocateLot' element={<LocateLot/>}/>
-          <Route path='/Login' element={<Login/>}/> */}
+          <Route path='/Login' element={<Login/>}/>
         </Routes>
       </Router>
       
