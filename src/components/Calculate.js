@@ -1,10 +1,34 @@
 import React from 'react';
 import ParkingInfo from "./ParkingInfo";
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
+
+function calu(){
+  var m1 = document.getElementById("Monday")
+  var m1field = parseInt(m1.options[m1.selectedIndex].value);
+
+  var t1 = document.getElementById("Tuesday")
+  var t1field = parseInt(t1.options[t1.selectedIndex].value);
+
+  var w1 = document.getElementById("Wednesday")
+  var w1field = parseInt(w1.options[w1.selectedIndex].value);
+
+  var tr1 = document.getElementById("Thursday")
+  var tr1field = parseInt(tr1.options[tr1.selectedIndex].value);
+
+  var f1 = document.getElementById("Friday")
+  var f1field = parseInt(f1.options[f1.selectedIndex].value);
+
+  var s1 = document.getElementById("Saturday")
+  var s1field = parseInt(s1.options[s1.selectedIndex].value);
+
+  var alertMessage = 'So far' + m1field +t1field +w1field +tr1field 
+  +f1field+s1field;
+  alert(alertMessage);
+}
 const MiddleContent = () => (
   <div className="col-7 text-center ">
     <div className="" style={{ fontSize: "27px" }}>
@@ -77,18 +101,10 @@ const MiddleContent = () => (
   </div>
 
 </form>
-<button type="button" onClick="cal()">Calculate</button>
+<button type="button" onClick="calu()">Calculate</button>
 
   </div>
 );
-function cal(){
-  var m1 = document.getElementById("Monday")
-  var m1field = parseInt(m1.options[m1.selectedIndex].value);
-
-  var alertMessage = 'So far' + m1field;
-  alert(alertMessage);
-}
-
 function Calculate() {
   let nav = useNavigate();
   var [main, SetMain] = useState(MiddleContent);
