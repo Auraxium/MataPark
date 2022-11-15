@@ -5,8 +5,8 @@ html, body {
 	height: 100vh !important;
 	width: 100vw !important;
 
-	display: flex !important;
-	flex-direction: column !important;
+	/* display: flex !important;
+	flex-direction: column !important; */
 
 	/* font-family: "Lucida Console", monospace !important; */
 
@@ -17,12 +17,12 @@ html, body {
 	/* box-sizing: border-box !important; */
 	/* color: rgb(221, 221, 221) !important; */
 
-	-webkit-touch-callout: none !important;
+	/* -webkit-touch-callout: none !important;
 	-webkit-user-select: none !important;
 	-khtml-user-select: none !important;
 	-moz-user-select: none !important;
 	-ms-user-select: none !important;
-	user-select: none !important;
+	user-select: none !important; */
 
 	 /* word-break: break-all;  */
 }
@@ -88,9 +88,9 @@ p, li{
 	font-family: ApexSerif, Georgia, serif;
 } */
 
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
 	display: none !important;
-}
+} */
 
 .dot {
 	border-style: dotted;
