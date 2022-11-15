@@ -5,22 +5,22 @@ import { useNavigate } from "react-router-dom";
 
 function calu() {
   var m1 = document.getElementById("Monday");
-  var m1field = parseInt(m1.options[m1.selectedIndex].value);
+  var m1field = parseFloat(m1.options[m1.selectedIndex].value);
 
   var t1 = document.getElementById("Tuesday");
-  var t1field = parseInt(t1.options[t1.selectedIndex].value);
+  var t1field = parseFloat(t1.options[t1.selectedIndex].value);
 
   var w1 = document.getElementById("Wednesday");
-  var w1field = parseInt(w1.options[w1.selectedIndex].value);
+  var w1field = parseFloat(w1.options[w1.selectedIndex].value);
 
   var tr1 = document.getElementById("Thursday");
-  var tr1field = parseInt(tr1.options[tr1.selectedIndex].value);
+  var tr1field = parseFloat(tr1.options[tr1.selectedIndex].value);
 
   var f1 = document.getElementById("Friday");
-  var f1field = parseInt(f1.options[f1.selectedIndex].value);
+  var f1field = parseFloat(f1.options[f1.selectedIndex].value);
 
   var s1 = document.getElementById("Saturday");
-  var s1field = parseInt(s1.options[s1.selectedIndex].value);
+  var s1field = parseFloat(s1.options[s1.selectedIndex].value);
 
   var alertMessage =
     "It would cost you: " +
