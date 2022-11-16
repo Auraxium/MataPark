@@ -2,9 +2,10 @@ import React from "react";
 import ParkingInfo from "./ParkingInfo";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import $ from 'jquery';
 
 function calu() {
-  var m1 = document.getElementById("Monday");
+  var m1 = $("#Monday")[0];
   var m1field = parseFloat(m1.options[m1.selectedIndex].value);
 
   var t1 = document.getElementById("Tuesday");
