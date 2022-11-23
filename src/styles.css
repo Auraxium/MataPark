@@ -27,71 +27,10 @@ html, body {
 
 	 /* word-break: break-all;  */
 }
-/* @font-face {
-	font-family: ATCOverlook;
-	src: url("./components/Fonts/ATCOverlook-Heavy.otf");
-	font-weight: 900;
-  }
-  @font-face {
-	font-family: ATCOverlook;
-	src: url("./components/Fonts/ATCOverlook-Bold.otf");
-	font-weight: bold;
-  }
-  @font-face {
-	font-family: ATCOverlook;
-	src: url("./components/Fonts/ATCOverlook-BoldItalic.otf");
-	font-weight: bold;
-	font-style: italic;
-  }
-  @font-face {
-	font-family: ApexSerif;
-	src: url("./components/Fonts/Apex Serif Medium Regular.otf");
-  }
-  @font-face {
-	font-family: ApexSerif;
-	src: url("./components/Fonts/Apex Serif Bold Regular.otf");
-	font-weight: bold;
-  }
-  @font-face {
-	font-family: ApexSerif;
-	src: url("./components/Fonts/Apex Serif Book Italic Regular.otf");
-	font-weight: 350; 
-	font-style: italic;
-  }
-  @font-face {
-	font-family: ApexSerif;
-	src: url("./components/Fonts/Apex Serif Book Regular.otf");
-	font-weight: 350;
-  }
 
-h1{
-	font-family: ATCOverlook, Helvetica, sans-serif;
-	font-weight: 900;
-}
-
-h2, .h2{
-	font-family: ATCOverlook, Helvetica, sans-serif;
-	font-weight: bold;
-}
-
-div .tab-header {
-	font-family: ATCOverlook, Helvetica, sans-serif;
-	font-weight: bold;
-	font-style: italic;
-}
-
-p, li{
-	font-family: ApexSerif, Georgia, serif;
-	font-weight: 350;
-}
-
-.btn-text {
-	font-family: ApexSerif, Georgia, serif;
-} */
-
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
 	display: none !important;
-} */
+}
 
 .dot {
 	border-style: dotted;
