@@ -49,7 +49,7 @@ function ParkingInfo() {
         }}>
           <Carousel
             data={data}
-            time={3000}
+            time={4000}
             width="900px"
             height="400px"
             captionStyle={captionStyle}
