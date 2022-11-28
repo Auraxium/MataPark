@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 
+(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js'))();
+
+
 const MiddleContent = () => (
   <div className="col-7 text-center m-0">
     <div className="" style={{ fontSize: "27px" }}>
@@ -152,5 +155,4 @@ function Homepage() {
   );
 }
 
-(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js'))();
 export default Homepage;
