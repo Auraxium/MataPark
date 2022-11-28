@@ -1,7 +1,4 @@
 import React from "react";
-import ParkingInfo from "./ParkingInfo";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import $ from "jquery";
 
 var names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
@@ -9,8 +6,8 @@ var days = [0, 0, 0, 0, 0, 0, 0];
 
 function calu() {
 	console.log(days)
-  var alertMessage = `It would cost you: $${
-    days.reduce((s, a) => s + a) * 16
+  let alertMessage = `It would cost you: $${
+    days.reduce((sum, a) => sum + a) * 16
   } total. Currently the parking pass for the semester is about $220`;
   //alert(alertMessage);
 	$('#result').html(alertMessage)
@@ -22,7 +19,7 @@ const Field = (props) => (
     <select
       onChange={e => days[props.index] = parseFloat(e.target.value)}
       className="form-control"
-			defaultValue={props.val}
+			defaultValue={0}
     >
       <option value="0">Not coming</option>
       <option value="3">1hr</option>
@@ -48,7 +45,7 @@ function Calculate() {
         </p>
 
         {days.map((e, i) => (
-          <Field val={e} index={i} key={i}/>
+          <Field index={i} key={i}/>
         ))}
 
         <button type="button" onClick={() => calu()}>
