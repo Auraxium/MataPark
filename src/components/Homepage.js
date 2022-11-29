@@ -105,6 +105,7 @@ function Homepage() {
 
         <div className="row m-0">
           <div className="col grey">
+            <br/>
             <a
               class="weatherwidget-io"
               href="https://forecast7.com/en/34d25n118d53/91330/?unit=us"
@@ -117,12 +118,22 @@ function Homepage() {
             >
               CSU - NORTHRIDGE WEATHER
             </a>
+            <br/>
             <div className="mb-1 font-big h2">Contact Us</div>
             <p className="">
-              {`Parking and Transportation Services
-              © California State University, Northridge
-              18111 Nordhoff Street, Northridge, CA 91330
-              Phone: (818) 677-1200 / Contact Us`}
+              <strong><em>{`For Any Website Questions or Problems:`}</em></strong> <br/>
+              <a href="mailto:matapark2022@gmail.com">{`Email the Team`}</a> <br/> <br/>
+              
+              
+              <strong><em>{`All Other Issues with Parking Please Contact:`}</em></strong> <br/>
+              {`Parking and Transportation Services`} <br/>
+              {`Phone: (818) 677-2157 | `}
+              <a href="mailto:parking@csun.edu">{`Email`}</a> <hr/>
+              
+              {`Cal State University, Northridge`} <br/>
+              <em>{`18111 Nordhoff Street`}<br/> 
+              {`Northridge, CA 91330-8290`} <br/>
+              {`© Team Sensci 2022`} <br/></em>
             </p>
           </div>
 
