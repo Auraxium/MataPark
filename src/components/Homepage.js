@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 
-(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js'))();
+const delay = (secs) =>
+  new Promise((resolve, reject) => setTimeout(() => resolve(""), secs));
 
 
 const MiddleContent = () => (
@@ -40,6 +41,23 @@ const MiddleContent = () => (
 function Homepage() {
   let nav = useNavigate();
   var [main, SetMain] = useState(MiddleContent);
+
+  useEffect(() => {
+    (async ( )=> {
+      await delay(4000);
+      (function (d, s, id) {
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (!d.getElementById(id)) {
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "https://weatherwidget.io/js/widget.min.js";
+          fjs.parentNode.insertBefore(js, fjs);
+        }
+      })(document, "script", "weatherwidget-io-js")()
+    })()
+    
+  }, [])
 
   return (
     <div className="d-flex justify-content-center">
@@ -87,11 +105,18 @@ function Homepage() {
 
         <div className="row m-0">
           <div className="col grey">
-          <a class="weatherwidget-io" 
-            href="https://forecast7.com/en/34d25n118d53/91330/?unit=us" 
-            data-label_1="CSU - NORTHRIDGE" data-label_2="WEATHER" 
-            data-font="Helvetica" data-icons="Climacons Animated" 
-            data-days="3" data-theme="weather_one" >CSU - NORTHRIDGE WEATHER</a>
+            <a
+              class="weatherwidget-io"
+              href="https://forecast7.com/en/34d25n118d53/91330/?unit=us"
+              data-label_1="CSU - NORTHRIDGE"
+              data-label_2="WEATHER"
+              data-font="Helvetica"
+              data-icons="Climacons Animated"
+              data-days="3"
+              data-theme="weather_one"
+            >
+              CSU - NORTHRIDGE WEATHER
+            </a>
             <div className="mb-1 font-big h2">Contact Us</div>
             <p className="">
               {`Parking and Transportation Services
@@ -121,7 +146,13 @@ function Homepage() {
               >
                 Locate Lot
               </button>
-              <button className="btn btn-danger col-10" onClick={() => window.location.href = 'https://www.csun.edu/sites/default/files/student_refund_schedule_2022-2023.pdf'}>
+              <button
+                className="btn btn-danger col-10"
+                onClick={() =>
+                  (window.location.href =
+                    "https://www.csun.edu/sites/default/files/student_refund_schedule_2022-2023.pdf")
+                }
+              >
                 Purchase Semester Pass
               </button>
               <button
@@ -154,5 +185,7 @@ function Homepage() {
     </div>
   );
 }
+
+
 
 export default Homepage;
