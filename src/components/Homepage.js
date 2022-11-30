@@ -173,7 +173,19 @@ function Homepage() {
                 Calculate (Semester vs Day to Day)
               </button>
             </div>
+            <br/>
+            {/* Notifications - Placeholder */}
+            <div className="text-center mb-1 h2" style={{ fontSize: "27px" }}>
+              Parking Notifications
+            </div>
+            <iframe src="https://example.org" 
+            title="Example Placeholder" 
+            loading="lazy"
+            sandbox="allow-scripts allow-downloads" 
+            width="100%" 
+            height="350"/>
           </div>
+
           {/* <footer className="sticky-bottom">
           <button
             className="btn btn-danger col-2 btn-text"
