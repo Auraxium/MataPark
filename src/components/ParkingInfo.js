@@ -49,7 +49,7 @@ function ParkingInfo() {
         }}>
           <Carousel
             data={data}
-            time={4000}
+            time={5000}
             width="900px"
             height="400px"
             captionStyle={captionStyle}
@@ -69,13 +69,20 @@ function ParkingInfo() {
               textAlign: "center",
               maxWidth: "850px",
               maxHeight: "500px",
-              margin: "40px auto"
+              margin: "40px auto 0px"
             }}
           />
         </div>
       </div>
     </div>
-
+        <h6 id="nav" align="center">
+          <a href="#Students">Student Parking </a>
+           | 
+          <a href="#"> Visitor Parking </a>
+           | 
+          <a href="#"> Faculty & Staff Parking</a>
+        </h6>
+        <h3 id="Students"> Student Parking</h3>
         <p>
           Students can purchase a semester permit or a daily parking permit to
           park. Student parking lots are:{" "}

@@ -65,7 +65,7 @@ html, body {
 }
 
 .fade:not(.show){
-	opacity: unset;
+	opacity: unset !important; 
 }
 .tt {
 	background-color: #ff0000;
