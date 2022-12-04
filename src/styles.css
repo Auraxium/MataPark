@@ -70,3 +70,20 @@ html, body {
 .tt {
 	background-color: #ff0000;
 }
+.notifications{
+	background-color: #d2202fe8;
+	border-radius: 20px;
+	padding: 20px 20px 20px 0px;
+	border:#E64B36 3px inset;
+}
+a.notify:link{
+	color: white;
+	text-decoration: none;
+}
+a.notify:hover{
+	color: white;
+	text-decoration: underline;
+}
+a.notify:visited{
+	color: whitesmoke;
+}
