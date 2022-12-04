@@ -28,13 +28,26 @@ const MiddleContent = () => (
       Enjoy!
     </p>
     <p className="">
-      NOTE: Currently CSUN uses license plate recognition software mounted on
+      NOTE from CSUN: Currently CSUN uses license plate recognition software mounted on
       their parking vehicles that will read plates and see if a valid CSUN
       parking permit is associated to the vehicle parked on campus. Please make
       sure that you have a current license plate number attached to your parking
       permit (Semester, Annual, or Daily) at all times. Thank You!
     </p>
     <hr />
+    <h2>Guide to Matapark</h2>
+      <ul className="guide" style={{textAlign: 'left',listStyle: 'none'}}>
+        <li><strong>Parking Information:</strong> <p style={{display:'inline-block'}}>Need basic information of where to go to park and the closest 
+        kiosk to your lot? It's all here.</p></li>
+        <li><strong>Parking Availability:</strong> <p style={{display:'inline-block'}}>Need a spot right now, but want to know how busy it is?
+        Get the latest parking lot vacancy info here.</p></li>
+        <li><strong>E.V. & Transportation:</strong> <p style={{display:'inline-block'}}>Not driving a car on campus? This is your source for all 
+        Electric Vehicle and Alternative Transportation needs.</p></li>
+        <li><strong>Locate Lot:</strong> <p style={{display:'inline-block'}}>Find the closest lot based on the building you want to go to by searching 
+        or selecting it from our list.</p></li>
+        <li><strong>Calculate:</strong> <p style={{display:'inline-block'}}>Paying for parking, but not sure if your getting the best deal? Try our 
+        parking calculator to find out if you can save some money during your semester.</p> </li>
+      </ul>
   </div>
 );
 
@@ -99,7 +112,7 @@ function Homepage() {
             //   $(e.target).addClass("highlight");
             // }}
           >
-            Accessibility
+            E.V. & Transportation
           </div>
         </div>
 
