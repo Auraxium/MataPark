@@ -3,13 +3,16 @@ import ParkingInfo from "./ParkingInfo";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
+import ParkingAvailability from "./ParkingAvailability";
+
+
 
 const delay = (secs) =>
   new Promise((resolve, reject) => setTimeout(() => resolve(""), secs));
 
 
 const MiddleContent = () => (
-  <div className="col-7 text-center m-0">
+  <div className="text-center m-0">
     <div className="" style={{ fontSize: "27px" }}>
       <h1>Welcome</h1>
     </div>
@@ -56,8 +59,8 @@ function Homepage() {
   var [main, SetMain] = useState(MiddleContent);
 
   useEffect(() => {
-    (async ( )=> {
-      await delay(4000);
+   (async ( )=> {
+     await delay(4000);
       (function (d, s, id) {
         var js,
           fjs = d.getElementsByTagName(s)[0];
@@ -67,7 +70,7 @@ function Homepage() {
           js.src = "https://weatherwidget.io/js/widget.min.js";
           fjs.parentNode.insertBefore(js, fjs);
         }
-      })(document, "script", "weatherwidget-io-js")()
+      })(document, "script", "weatherwidget-io-js")
     })()
     
   }, [])
@@ -79,8 +82,8 @@ function Homepage() {
           <div
             className="col-3 py-4 highlight"
             onClick={(e) => {
-              SetMain(MiddleContent);
-              $(".highlight").toggleClass("highlight");
+              SetMain(<MiddleContent/>);
+              $(".highlight").removeClass("highlight");
               $(e.target).addClass("highlight");
             }}
           >
@@ -89,8 +92,8 @@ function Homepage() {
           <div
             className="col-3 py-4"
             onClick={(e) => {
-              SetMain(ParkingInfo);
-              $(".highlight").toggleClass("highlight");
+              SetMain(<ParkingInfo/>);
+              $(".highlight").removeClass("highlight");
               $(e.target).addClass("highlight");
             }}
           >
@@ -98,10 +101,11 @@ function Homepage() {
           </div>
           <div
             className="col-3 py-4"
-            // onClick={(e) => {
-            //   $(".highlight").toggleClass("highlight");
-            //   $(e.target).addClass("highlight");
-            // }}
+            onClick={(e) => {
+							SetMain(<ParkingAvailability/>);
+              $(".highlight").toggleClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
           >
             Parking Availability
           </div>
@@ -150,7 +154,10 @@ function Homepage() {
             </p>
           </div>
 
-          {main}
+						<div className="col-7">
+							{main}
+						</div>
+          
 
           <div className="col grey pb-2">
             <div className="text-center mb-1 h2" style={{ fontSize: "27px" }}>
@@ -184,6 +191,12 @@ function Homepage() {
                 onClick={() => nav("/Calculate")}
               >
                 Calculate (Semester vs Day to Day)
+              </button>
+							<button
+                className="btn btn-danger col-10"
+                onClick={() => localStorage.removeItem("getLots")}
+              >
+                Clear
               </button>
             </div>
             <br/>

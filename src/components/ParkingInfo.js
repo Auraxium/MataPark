@@ -37,7 +37,7 @@ const slideNumberStyle = {
 function ParkingInfo() {
   return (
     <>
-      <div className="col-7 ">
+      <div className="">
         <div className="" style={{ fontSize: "27px" }}>
           <h1>Parking Information</h1>
         </div>

@@ -20,6 +20,8 @@ const PermitUI = (props) => (
 function BuyDailyPass() {
   let permits = [];
 
+	localStorage.clear();
+
   useEffect(() => {
     ListPermits();
   }, []);
@@ -29,7 +31,6 @@ function BuyDailyPass() {
       .delete(port + "/delete/" + id)
       .then(() => console.log("asd"))
       .catch((err) => console.log("Failed to delete: " + err));
-   // permits = permits.filter((el) => el._id !== id);
   }
 
   function ListPermits() {
@@ -40,7 +41,7 @@ function BuyDailyPass() {
         console.log(permits);
         ReactDOM.render(
           permits.map((i) => (
-            <PermitUI data={i} key={i._id} delete={deletePermit} />
+            <PermitUI data={i} key={crypto.randomUUID()} delete={deletePermit} />
           )),
           document.getElementById("msg")
         );
@@ -50,7 +51,6 @@ function BuyDailyPass() {
 
   function onSubmit() {
     let permit = { license: $("#license").val(), expires: $("#hours").val()};
-    //permits.push(permit);
 
     axios
       .post(port + "/save", permit)
