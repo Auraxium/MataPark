@@ -103,7 +103,7 @@ function Homepage() {
             className="col-3 py-4"
             onClick={(e) => {
 							SetMain(<ParkingAvailability/>);
-              $(".highlight").toggleClass("highlight");
+              $(".highlight").removeClass("highlight");
               $(e.target).addClass("highlight");
             }}
           >

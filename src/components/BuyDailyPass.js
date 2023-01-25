@@ -11,7 +11,7 @@ const PermitUI = (props) => (
     <p className="lead">Expires: {props.data.expires}</p>
     <button className="btn btn-danger" onClick={(e) => {
       props.delete(props.data._id);
-      $(e.target.parent).remove()
+      $(`#${props.data._id}`).remove();
       }}>Delete
     </button>
   </div>
