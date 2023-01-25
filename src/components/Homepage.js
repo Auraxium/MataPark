@@ -124,7 +124,7 @@ function Homepage() {
           <div className="col grey">
             <br/>
             <a
-              class="weatherwidget-io"
+              className="weatherwidget-io"
               href="https://forecast7.com/en/34d25n118d53/91330/?unit=us"
               data-label_1="CSU - NORTHRIDGE"
               data-label_2="WEATHER"
@@ -145,7 +145,8 @@ function Homepage() {
               <strong><em>{`All Other Issues with Parking Please Contact:`}</em></strong> <br/>
               {`Parking and Transportation Services`} <br/>
               {`Phone: (818) 677-2157 | `}
-              <a href="mailto:parking@csun.edu">{`Email`}</a> <hr/>
+              <a href="mailto:parking@csun.edu">{`Email`}</a>
+              <hr/>
               
               {`Cal State University, Northridge`} <br/>
               <em>{`18111 Nordhoff Street`}<br/> 
@@ -206,23 +207,23 @@ function Homepage() {
             </div>
             <div className="notifications">
                 <ul style={{fontSize: "16px",color:"white"}}>
-                <li><a class="notify" href="http://www.csun.edu/sites/default/files/LetterFromTheVicePresidentOfAdmin%26Finance.pdf" target="_blank">
+                <li><a className="notify" href="http://www.csun.edu/sites/default/files/LetterFromTheVicePresidentOfAdmin%26Finance.pdf" target="_blank">
                   A Message from Colin Donahue, Vice President for Administration Finance:Parking Permit Increase Notification</a></li><hr/>
-                <li><a class="notify" href="http://www.csun.edu/sites/default/files/Parking%20Update%20-%20Los%20Angeles%20Mayor%20Eric%20Garcetti%27s%20State%20Of%20The%20City%20-%204%2014%202015_0.pdf">
+                <li><a className="notify" href="http://www.csun.edu/sites/default/files/Parking%20Update%20-%20Los%20Angeles%20Mayor%20Eric%20Garcetti%27s%20State%20Of%20The%20City%20-%204%2014%202015_0.pdf">
                   Parking Update: Los Angeles Mayor Eric Garcetti's State Of The City</a></li><hr/>
-                <li><a class="notify" href="http://www.csun.edu/sites/default/files/B5%20Parking%20Lot%20Maintenance%20-%204%208%202015.pdf">
+                <li><a className="notify" href="http://www.csun.edu/sites/default/files/B5%20Parking%20Lot%20Maintenance%20-%204%208%202015.pdf">
                   B5 Slurry Closure and Parking Lot Maintenance 4/8/2015</a></li><hr/>
-                <li><a class="notify" href="http://www.csun.edu/sites/default/files/B5%20slurry%20closure%20map_rev%20040315_4_0.pdf">
+                <li><a className="notify" href="http://www.csun.edu/sites/default/files/B5%20slurry%20closure%20map_rev%20040315_4_0.pdf">
                   B5 Structure Closure Slurry Project</a></li>
-                {/* <li><a class="notify" href="http://www.csun.edu/sites/default/files/Pilot%20Program%20-%20Short%20Term%20Visitor%20Parking%20Rates%20-%20Effective%202%2023%202015.pdf">
+                {/* <li><a className="notify" href="http://www.csun.edu/sites/default/files/Pilot%20Program%20-%20Short%20Term%20Visitor%20Parking%20Rates%20-%20Effective%202%2023%202015.pdf">
                   Short Term Visitor Parking Rates for F5, G3, and G4, G3 Structure 2/23/15</a></li>
-                <li><a class="notify" href="http://www.csun.edu/sites/default/files/B5ClosureBroadcast6-23-14.pdf" target="_blank">
+                <li><a className="notify" href="http://www.csun.edu/sites/default/files/B5ClosureBroadcast6-23-14.pdf" target="_blank">
                   B5 Structure Lot Painting Cleaning Project Broadcast Message 6/23/14</a></li>
-                <li><a class="notify" href="http://www.csun.edu/sites/default/files/B5ClosureMap.pdf" target="_blank">
+                <li><a className="notify" href="http://www.csun.edu/sites/default/files/B5ClosureMap.pdf" target="_blank">
                   B5 Structure Lot Painting Cleaning</a></li>
-                <li><a class="notify" href="http://www.csun.edu/sites/default/files/TsengCollegeBroadcast61714.pdf" target="_blank">
+                <li><a className="notify" href="http://www.csun.edu/sites/default/files/TsengCollegeBroadcast61714.pdf" target="_blank">
                   Tseng College of Extended Learning Construction Project Broadcast Message 6/17/14</a></li>
-                <li><a class="notify" href="http://www.csun.edu/sites/default/files/RelocationB4.pdf" target="_blank">
+                <li><a className="notify" href="http://www.csun.edu/sites/default/files/RelocationB4.pdf" target="_blank">
                   Tseng College of Extended Learning Construction Project</a></li> */}
                 </ul>
             </div>
