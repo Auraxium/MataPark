@@ -31,7 +31,7 @@ function ParkingAvailability() {
     <>
 		<div className="d-flex justify-content-center align-items-center gx-2">
 			<div className="px-2" style={{fontSize: '25px'}}>Parking Availability</div>
-			<span class="loader" ref={loadSpinner}></span>
+			<span className="loader" ref={loadSpinner}></span>
 		</div>
       
       <div id="lots">{lots.map(e => <Lot lot={e.lot} slots={e.slots} key={crypto.randomUUID()}/>)}</div>
