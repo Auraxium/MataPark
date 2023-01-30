@@ -5,8 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 import ParkingAvailability from "./ParkingAvailability";
 
-
-
 const delay = (secs) =>
   new Promise((resolve, reject) => setTimeout(() => resolve(""), secs));
 
@@ -137,7 +135,7 @@ function Homepage() {
             </a>
             <br/>
             <div className="mb-1 font-big h2">Contact Us</div>
-            <p className="">
+            <div className="">
               <strong><em>{`For Any Website Questions or Problems:`}</em></strong> <br/>
               <a href="mailto:matapark2022@gmail.com">{`Email the Team`}</a> <br/> <br/>
               
@@ -152,7 +150,7 @@ function Homepage() {
               <em>{`18111 Nordhoff Street`}<br/> 
               {`Northridge, CA 91330-8290`} <br/>
               {`© Team Sensci 2022`} <br/></em>
-            </p>
+            </div>
           </div>
 
 						<div className="col-7">
@@ -195,7 +193,10 @@ function Homepage() {
               </button>
 							<button
                 className="btn btn-danger col-10"
-                onClick={() => localStorage.removeItem("getLots")}
+                onClick={() => {
+                  localStorage.removeItem("lots-cookie")
+                  localStorage.removeItem("last-PA-request")
+                }}
               >
                 Clear
               </button>
