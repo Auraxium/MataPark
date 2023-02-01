@@ -64,7 +64,7 @@ function ParkingAvailability() {
       </div>
 
       <div id="lots">
-        {lots.map((e, i = 1) => (
+        {lots.map((e) => (
           <Lot lot={e.lot} slots={e.slots} key={crypto.randomUUID()} />
         ))}
       </div>
