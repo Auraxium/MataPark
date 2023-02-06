@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 import ParkingAvailability from "./ParkingAvailability";
+import Clock from 'react-live-clock';
 
 const delay = (secs) =>
   new Promise((resolve, reject) => setTimeout(() => resolve(""), secs));
@@ -58,7 +59,7 @@ function Homepage() {
 
   useEffect(() => {
    (async ( )=> {
-     await delay(4000);
+     await delay(0);
       (function (d, s, id) {
         var js,
           fjs = d.getElementsByTagName(s)[0];
