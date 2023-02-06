@@ -57,8 +57,6 @@ function Homepage() {
   var [main, SetMain] = useState(MiddleContent);
 
   useEffect(() => {
-   (async ( )=> {
-     await delay(4000);
       (function (d, s, id) {
         var js,
           fjs = d.getElementsByTagName(s)[0];
@@ -69,8 +67,6 @@ function Homepage() {
           fjs.parentNode.insertBefore(js, fjs);
         }
       })(document, "script", "weatherwidget-io-js")
-    })()
-    
   }, [])
 
   return (
