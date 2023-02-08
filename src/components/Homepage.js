@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 import ParkingAvailability from "./ParkingAvailability";
-import Clock from 'react-live-clock';
 
 const delay = (secs) =>
   new Promise((resolve, reject) => setTimeout(() => resolve(""), secs));
@@ -194,12 +193,9 @@ function Homepage() {
               </button>
 							<button
                 className="btn btn-danger col-10"
-                onClick={() => {
-                  localStorage.removeItem("lots-cookie")
-                  localStorage.removeItem("last-PA-request")
-                }}
+                onClick={() => nav("/ParkingTimer")}
               >
-                Clear
+                Parking Timer
               </button>
             </div>
             <br/>
