@@ -47,6 +47,7 @@ function ParkingAvailability() {
       localStorage.setItem("lots-cookie", JSON.stringify(lotData));
       setLots(lotData.data);
 
+      console.log(lotData)
       loadSpinner.current.style.display = "none";
     }).catch(err => {
 			console.log(err);
@@ -64,7 +65,7 @@ function ParkingAvailability() {
       </div>
 
       <div id="lots">
-        {lots.map((e) => (
+        {!lots.map ? "server broke :(" : lots.map((e) => (
           <Lot lot={e.lot} slots={e.slots} key={crypto.randomUUID()} />
         ))}
       </div>

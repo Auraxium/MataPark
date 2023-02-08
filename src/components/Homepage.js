@@ -70,6 +70,7 @@ function Homepage() {
   }, [])
 
   return (
+
     <div className="d-flex justify-content-center">
       <div className="col-11">
         <div className="d-flex m-0 text-center text-white bg-black tab-header">
@@ -189,12 +190,9 @@ function Homepage() {
               </button>
 							<button
                 className="btn btn-danger col-10"
-                onClick={() => {
-                  localStorage.removeItem("lots-cookie")
-                  localStorage.removeItem("last-PA-request")
-                }}
+                onClick={() => nav("/ParkingTimer")}
               >
-                Clear
+                Parking Timer
               </button>
             </div>
             <br/>
