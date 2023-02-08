@@ -65,9 +65,9 @@ function ParkingAvailability() {
       </div>
 
       <div id="lots">
-        {/* {lots.map((e) => (
+        {!lots.map ? "server broke :(" : lots.map((e) => (
           <Lot lot={e.lot} slots={e.slots} key={crypto.randomUUID()} />
-        ))} */}
+        ))}
       </div>
     </>
   );
