@@ -3,11 +3,12 @@ import $ from "jquery";
 
 var names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 var days = [0, 0, 0, 0, 0, 0, 0];
+var comb = [0];
 
 function calu() {
 	console.log(days)
   let alertMessage = `It would cost you: $${
-    days.reduce((sum, a) => sum + a) * 16
+    days.reduce((sum, a) => sum + a) * +comb
   } total. Currently the parking pass for the semester is about $220`;
   //alert(alertMessage);
 	$('#result').html(alertMessage)
@@ -44,6 +45,20 @@ function Calculate() {
           Not all lots offer 1hr options find a designated ticket dispenser
         </p>
 
+        <label>
+          What week are you in the semester?
+          <select
+          onChange={e => comb = ( +e.target.value)
+          }
+          defaultValue ='0'>
+            <option value= '16'> 1st-4th weeks</option> 
+            <option value= '12'> 5th-8th weeks</option> 
+            <option value= '9'> 9th-12th weeks</option> 
+            <option value= '4'> 13th-end of semester</option> 
+          </select>
+
+        </label>
+        
         {days.map((e, i) => (
           <Field index={i} key={i}/>
         ))}
