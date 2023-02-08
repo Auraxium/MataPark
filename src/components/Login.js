@@ -4,7 +4,7 @@ export default function Login() {
 
   return (
     <div>
-      <h1>Login Page</h1>
+      <h1>Login PKHABDUbadihob AIHDO Bage</h1>
     </div>
   );
 }
