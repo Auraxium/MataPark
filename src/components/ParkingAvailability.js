@@ -28,11 +28,11 @@ function ParkingAvailability() {
       if (now - lotCookie.date < 10 * 1000 * 60) 
 				setLots(lotCookie.data);
 
-      if ((now - +localStorage.getItem("last-PA-request")) < 60000) {
-				loadSpinner.current.style.display = "none";
-				console.log('too early')
-        return;
-			}
+      // if ((now - +localStorage.getItem("last-PA-request")) < 60000) {
+			// 	loadSpinner.current.style.display = "none";
+			// 	console.log('too early')
+      //   return;
+			// }
     }
 
     localStorage.setItem("last-PA-request", now);
