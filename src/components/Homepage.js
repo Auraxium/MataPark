@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 import ParkingAvailability from "./ParkingAvailability";
+import EVTransportation from "./EVTransportation";
 
 const delay = (secs) =>
   new Promise((resolve, reject) => setTimeout(() => resolve(""), secs));
@@ -107,15 +108,16 @@ function Homepage() {
           >
             Parking Availability
           </div>
+         
           <div
             className="col-3 py-4"
-            // onClick={(e) => {
-            //   $(".highlight").toggleClass("highlight");
-            //   $(e.target).addClass("highlight");
-            // }}
-          >
-            E.V. & Transportation
-          </div>
+            onClick={(e) => {
+							SetMain(<EVTransportation/>);
+              $(".highlight").removeClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
+          >E.V. & Transportation</div>
+
         </div>
 
         <div className="row m-0">

@@ -4,6 +4,7 @@ import BuyDailyPass from './components/BuyDailyPass';
 import Calculate from './components/Calculate';
 import Login from './components/Login';
 import LocateLot from './components/LocateLot';
+import EVTransportation from './components/EVTransportation';
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 
@@ -19,6 +20,7 @@ function App() {
           <Route path='/Calculate' element={<Calculate/>}/>
           <Route path='/LocateLot' element={<LocateLot/>}/>
           <Route path='/Login' element={<Login/>}/>
+          <Route path='/EVTransportation' element={<EVTransportation/>}/>
         </Routes>
       </Router>
       
