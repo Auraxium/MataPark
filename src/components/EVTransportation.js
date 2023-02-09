@@ -1,6 +1,8 @@
 
 import React from "react";
 import pic from "./Images/EV-Charging.png";
+import pic2 from "./Images/EVMap.png";
+import pic3 from "./Images/EVChargie.png";
 import $ from "jquery";
 
 
@@ -9,39 +11,71 @@ function EVTransportation() {
       <div className="container">
         <div className="col text-center">
           <div className="" style={{ fontSize: "27px" }}>
-            <h1>Calculator</h1>
-            <h3>Compare daily pass to semester pass</h3>
+            <h1>EV Charging and Transportation</h1>
+           
           </div>
+        
           <img
       src = {pic}
       alt=""
       position="absolute"
       width="80%"
-      style={{ aspectRatio: "16/7" }}
-    />
+      style={{ aspectRatio: "15/7" }}
 
+    />
+    
+   <p>California State University, Northridge is currently undergoing an expansion to their
+        electric vehicle charging stations. Anyone that commutes with an EV vehicle will have access
+        to around 90 charging stations on the platform Powered By Chargie, which happens to be one of
+        biggest installers for EV charging stations.
+    </p>
+
+    <p>
+      Map indicates charging station locations
+    </p>
           <img
-      src = {pic}
+      src = {pic2}
       alt=""
       position="absolute"
-      width="80%"
-      style={{ aspectRatio: "16/7" }}
+      width="120%"
+      style={{ aspectRatio: "13/7" }}
+      
     />
+    
+     <h3>Current EV Chargers Update</h3>
           <p className="mt-4">
-            Below select the hours you plan to be at school, be mindful of gaps.
-            Not all lots offer 1hr options find a designated ticket dispenser
+            <li>B2: 8 chargers</li>
+            <li>B6: 4 chargers</li>
+            <li>G3: 4 chargers</li>
+            <li>G6: 36 chargers</li>
+            <li>G9: 4 chargers</li>
+            <li>B4: 2 chargers</li>
+            <li>B5: 10 chargers</li>
+            <li>F2: 8 chargers</li>
+            <li>F5: 2 DC fast chargers</li>
+            <li>E6: 2 chargers</li>
+            
           </p>
   
-    
+          <img
+      src = {pic3}
+      alt=""
+      position="absolute"
+      width="80%"
+      style={{ aspectRatio: "15/7" }}
+
+    />
   
-          <button type="button" onClick={() => EVTransportation()}>
-            Calculate
-          </button>
+         
   
                   <div className="mt-3" id="result" style={{ fontSize: "27px" }}></div>
         </div>
       </div>
+
+
     );
+
+
   }
 
 export default EVTransportation;
