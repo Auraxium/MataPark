@@ -1,10 +1,24 @@
 import React,{useState} from "react";
 import "../styles/ParkingTimer.css";
+import Countdown from 'react-countdown';
 
 function ParkingTimer() {
     const [isActive, setIsActive] = useState(false);
     const btnClick = () => {
         setIsActive(!isActive);
+    }
+    // Random component
+    const Completionist = () => <span>You're About to Expire!</span>;
+
+    // Renderer callback with condition
+    const renderer = ({ hours, minutes, seconds, completed }) => {
+    if (completed) {
+        // Render a completed state
+        return <Completionist />;
+    } else {
+        // Render a countdown
+        return <span>{hours}:{minutes}:{seconds}</span>;
+    }
     }
     return (
       <div className="container mt-4">
@@ -38,7 +52,8 @@ function ParkingTimer() {
                         onClick={() => {alert('All Day Button was clicked!');btnClick();}}>
                         All Day</button>
                 </div>
-
+                <br/>
+                <Countdown date={Date.now() + 10000} renderer={renderer}/>
                 <p><strong>OR</strong></p>
 
                 <form class="row gy-2 gx-3 align-items-center justify-content-center mt-4">
@@ -53,24 +68,49 @@ function ParkingTimer() {
                         <label class="visually-hidden" for="TicketHours">Ticket Hours</label>
                         <select class="form-select" id="TicketHours" required>
                             <option value="" disabled selected hidden>Hours of Ticket...</option>
-                            <option value="1">1 Hour</option>
-                            <option value="2">2 Hours</option>
-                            <option value="4">4 Hours</option>
-                            <option value="24">All Day</option>
+                            <option value="1hr">1 Hour</option>
+                            <option value="2hr">2 Hours</option>
+                            <option value="4hr">4 Hours</option>
+                            <option value="24hr">All Day</option>
                         </select>
                     </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
                 </div>
                 </form>
               </div>
               <div className="col mt-4">
                 <p className="">
                     <strong>If you parked on the street:</strong> <br/>
-                    Tell us when you arrived,how much time you can park there,and when you'd like to be reminded.
+                    Tell us when you arrived,how much time you can park there,and we'll remind you 15 minutes before it expires.
                     We'll let you know when you need to leave so you have a peace of mind - no tickets today!
                     
                 </p>
+                <form class="row gy-2 gx-3 align-items-center justify-content-center mt-4">
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="StreetHours">Time Parked</label>
+                            <div class="input-group">
+                            <div class="input-group-text">Time Parked</div>
+                            <input type="time" class="form-control" id="StreetHours" placeholder="Choose Time" defaultValue="09:00"/>
+                            </div>
+                    </div>
+                    <div class="col-auto">
+                        <label class="visually-hidden" for="StreetHours">Street Hours</label>
+                        <select class="form-select" id="StreetHours" required>
+                            <option value="" disabled selected hidden>How Much Time?</option>
+                            <option value="30min">30 minutes</option>
+                            <option value="45min">45 minutes</option>
+                            <option value="1hr">1 Hour</option>
+                            <option value="2hr">2 Hours</option>
+                            <option value="3hr">3 Hours</option>
+                            <option value="4hr">4 Hours</option>
+                            <option value="5hr">5 Hours</option>
+                        </select>
+                    </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+                </div>
+                </form>
               </div>
           </div>
           </div>
