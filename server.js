@@ -26,27 +26,47 @@ mongoose.connect(URI, {
 .then(() => console.log("connected to database"))
 .catch((err) => console.log(err));
 
-app.get("/load", (req, res) => {
-	permitModel.find().then(arr => res.json(arr))
-})
+let lots = {};
 
-app.get("/parking-availability", async (req, res) => {
+async function parkingUpdate() {
+	try {
+		console.log('--------------')
 	const browser = await puppeteer.launch();
+	console.log('launched')
 	const page = await browser.newPage();
-	await page.goto('https://m.csun.edu/alumni_community/find_parking/index')
+	console.log('new page')
 
-	const lots = await page.evaluate(() => 
+	await page.goto('https://m.csun.edu/alumni_community/find_parking/index');
+	console.log('on page')
+
+const lots = await page.evaluate(() => 
 		Array.from(document.querySelectorAll('tr.kgoui_object.kgoui_table_table_row'), (e) => ({
 			lot: e.querySelector(':first-child div a div .kgo-title :first-child strong').innerText,
 			slots: e.querySelector(':nth-child(2) div a div .kgo-title :first-child span').innerText
 		}))
 	)
 
-	console.log(lots);
+	console.log('got lots');
 
 	await browser.close();
 
-	res.json(lots);
+	console.log('closed')
+	} catch(err) {
+		console.log(err);
+		await browser.close();
+	}
+	
+}
+
+
+let interval = setInterval(parkingUpdate , 15*1000);
+
+app.get("/load", (req, res) => {
+	permitModel.find().then(arr => res.json(arr))
+})
+
+app.get("/parking-availability", async (req, res) => {
+	res.json(lots)
 })
 
 app.post("/save", (req, res) => {

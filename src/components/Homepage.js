@@ -58,8 +58,6 @@ function Homepage() {
   var [main, SetMain] = useState(MiddleContent);
 
   useEffect(() => {
-   (async ( )=> {
-     await delay(4000);
       (function (d, s, id) {
         var js,
           fjs = d.getElementsByTagName(s)[0];
@@ -70,11 +68,10 @@ function Homepage() {
           fjs.parentNode.insertBefore(js, fjs);
         }
       })(document, "script", "weatherwidget-io-js")
-    })()
-    
   }, [])
 
   return (
+
     <div className="d-flex justify-content-center">
       <div className="col-11">
         <div className="d-flex m-0 text-center text-white bg-black tab-header">
@@ -195,12 +192,9 @@ function Homepage() {
               </button>
 							<button
                 className="btn btn-danger col-10"
-                onClick={() => {
-                  localStorage.removeItem("lots-cookie")
-                  localStorage.removeItem("last-PA-request")
-                }}
+                onClick={() => nav("/ParkingTimer")}
               >
-                Clear
+                Parking Timer
               </button>
             </div>
             <br/>

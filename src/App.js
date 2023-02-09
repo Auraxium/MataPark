@@ -20,6 +20,7 @@ function App() {
           <Route path='/Calculate' element={<Calculate/>}/>
           <Route path='/LocateLot' element={<LocateLot/>}/>
           <Route path='/Login' element={<Login/>}/>
+          <Route path='/ParkingTimer' element={<ParkingTimer/>}/>
           <Route path='/EVTransportation' element={<EVTransportation/>}/>
         </Routes>
       </Router>
