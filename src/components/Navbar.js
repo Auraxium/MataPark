@@ -17,7 +17,7 @@ export default function Navbar() {
               nav("/");
             }}
           >
-            MataPark
+            MatasjmfadhaPark
           </h1>
         </div>
 
