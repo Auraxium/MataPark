@@ -7,8 +7,7 @@ export default function Navbar() {
   return (
     <>
       <div
-        className="bg-danger mb-2 p-1 d-flex text-white  mx-0 align-items-center sticky-top"
-        style={{ justifyContent: "space-between" }}
+        className="bg-danger mb-2 p-1 row text-white mx-0 align-items-center sticky-top"
       >
         <div className="col row">
           <h1
