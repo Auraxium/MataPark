@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 import ParkingAvailability from "./ParkingAvailability";
+import EVTransportation from "./EVTransportation";
 
 const delay = (secs) =>
   new Promise((resolve, reject) => setTimeout(() => resolve(""), secs));
@@ -57,8 +58,6 @@ function Homepage() {
   var [main, SetMain] = useState(MiddleContent);
 
   useEffect(() => {
-   (async ( )=> {
-     await delay(4000);
       (function (d, s, id) {
         var js,
           fjs = d.getElementsByTagName(s)[0];
@@ -69,11 +68,10 @@ function Homepage() {
           fjs.parentNode.insertBefore(js, fjs);
         }
       })(document, "script", "weatherwidget-io-js")
-    })()
-    
   }, [])
 
   return (
+
     <div className="d-flex justify-content-center">
       <div className="col-11">
         <div className="d-flex m-0 text-center text-white bg-black tab-header">
@@ -107,15 +105,16 @@ function Homepage() {
           >
             Parking Availability
           </div>
+         
           <div
             className="col-3 py-4"
-            // onClick={(e) => {
-            //   $(".highlight").toggleClass("highlight");
-            //   $(e.target).addClass("highlight");
-            // }}
-          >
-            E.V. & Transportation
-          </div>
+            onClick={(e) => {
+							SetMain(<EVTransportation/>);
+              $(".highlight").removeClass("highlight");
+              $(e.target).addClass("highlight");
+            }}
+          >E.V. & Transportation</div>
+
         </div>
 
         <div className="row m-0">
@@ -193,12 +192,9 @@ function Homepage() {
               </button>
 							<button
                 className="btn btn-danger col-10"
-                onClick={() => {
-                  localStorage.removeItem("lots-cookie")
-                  localStorage.removeItem("last-PA-request")
-                }}
+                onClick={() => nav("/ParkingTimer")}
               >
-                Clear
+                Parking Timer
               </button>
             </div>
             <br/>

@@ -28,11 +28,11 @@ function ParkingAvailability() {
       if (now - lotCookie.date < 10 * 1000 * 60) 
 				setLots(lotCookie.data);
 
-      if ((now - +localStorage.getItem("last-PA-request")) < 60000) {
-				loadSpinner.current.style.display = "none";
-				console.log('too early')
-        return;
-			}
+      // if ((now - +localStorage.getItem("last-PA-request")) < 60000) {
+			// 	loadSpinner.current.style.display = "none";
+			// 	console.log('too early')
+      //   return;
+			// }
     }
 
     localStorage.setItem("last-PA-request", now);
@@ -47,6 +47,7 @@ function ParkingAvailability() {
       localStorage.setItem("lots-cookie", JSON.stringify(lotData));
       setLots(lotData.data);
 
+      console.log(lotData)
       loadSpinner.current.style.display = "none";
     }).catch(err => {
 			console.log(err);
@@ -64,7 +65,7 @@ function ParkingAvailability() {
       </div>
 
       <div id="lots">
-        {lots.map((e, i = 1) => (
+        {!lots.map ? "server broke :(" : lots.map((e) => (
           <Lot lot={e.lot} slots={e.slots} key={crypto.randomUUID()} />
         ))}
       </div>
