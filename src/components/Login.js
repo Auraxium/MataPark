@@ -1,4 +1,5 @@
 import React from "react";
+import GoogleLogin from "./GoogleLogin";
 
 export default function Login() {
   return (
@@ -36,6 +37,7 @@ export default function Login() {
       <br></br>
 
 <p>Or Create a login with:</p>
+<GoogleLogin/>
     </div>
   );
 }
