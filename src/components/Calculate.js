@@ -35,6 +35,10 @@ const Field = (props) => (
 );
 
 function Calculate() {
+
+
+
+  
   return (
     <div className="container">
       <div className="col text-center">
