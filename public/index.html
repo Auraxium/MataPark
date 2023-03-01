@@ -41,3 +41,38 @@
     -->
   </body>
 </html>
+
+<head>
+  <title>Google Auth</title>
+  <meta name="google-signin-client_id" content="929743742729-0776prasjuupmg0ivs1s59i3osb40mo6.apps.googleusercontent.com">
+<script src="http://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+<!-- <body>
+  <h1>Google Login</h1>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <div id="content"></div>
+  <button onclick="SignOut()">Sign Out</button>
+</body>
+
+<script>
+  function onSignIn(googleUser){
+    console.log('User is'+ JSON.stringify(googleUser.getBasicProfile))
+  
+    var element = document.querySelector('#content')
+    element.innerText = googleUser.getBasicProfile().getGivenName();
+  
+  
+  }
+
+  function SignOut(){
+    gapi.auth2.getAuthInstance().signOut().then(function(){
+      console.log('user signed out')
+    })
+  }
+
+
+
+  </script> -->
+
+</html>

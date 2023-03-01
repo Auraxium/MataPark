@@ -6,6 +6,7 @@ import $ from "jquery";
 import ParkingAvailability from "./ParkingAvailability";
 import EVTransportation from "./EVTransportation";
 
+
 const delay = (secs) =>
   new Promise((resolve, reject) => setTimeout(() => resolve(""), secs));
 
