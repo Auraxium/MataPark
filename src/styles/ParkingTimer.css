@@ -3,6 +3,7 @@
   }
 .bg{
     background-color: rgba(2, 57, 166, 0.821);
+    background-image: var(--bs-gradient);
 }
 /* .countdown {
     position: absolute;

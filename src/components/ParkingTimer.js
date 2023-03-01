@@ -86,7 +86,7 @@ function ParkingTimer() {
 		setAllDay(false);
 	  };
 	// Random component
-	const Completionist = () => <span>You're Parking has Expired!</span>;
+	const Completionist = () => <span className="bg-light">You're Parking has Expired!</span>;
 
 	// Renderer callback with condition
 	const renderer = ({ hours, minutes, seconds, completed }) => {
@@ -96,7 +96,7 @@ function ParkingTimer() {
 		} else {
 			// Render a countdown
 			return (
-				<span className="">
+				<span className="bg-light">
 				Time Left:<br/>
 					{hours}:{minutes}:{seconds}
 				</span>
@@ -288,12 +288,12 @@ function ParkingTimer() {
 					</div>
 				</div>
 			</div>
-			<div className="text-center mb-2 mt-2 pt-4 bg-light">
+			<div className="text-center mb-2 mt-2 pt-4">
 					<h1 className="fw-bold display-5 pb-4">
-						{allDay === true && message && <p>{message}</p>}
+						{allDay === true && message && <p className="bg-light">{message}</p>}
 						{allDay === false && hours > 0 && (
 						<Countdown
-							style={{ fontSize: "1.5rem" }}
+							style={{ fontSize: "1.5rem"}}
 							date={Date.now() + hours * 3600000}
 							renderer={renderer}
 						/>
