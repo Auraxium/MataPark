@@ -17,7 +17,7 @@ function ParkingTimer() {
 		day: "numeric",
 	};
 	const dateWithoutTime = tomorrow.toLocaleDateString("en-US", dateOptions);
-	const currentTime = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+	// const currentTime = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
 	const btnClick = () => {
 		setIsActive(!isActive);
