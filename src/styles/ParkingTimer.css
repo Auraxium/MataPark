@@ -1,3 +1,12 @@
+.container {
+    min-height: 50vh; /* adjust value as needed */
+  }
 .bg{
     background-color: rgba(2, 57, 166, 0.821);
 }
+/* .countdown {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: -1;
+  }   */
