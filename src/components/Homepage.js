@@ -90,7 +90,7 @@ function Homepage() {
           <div
             className="col-3 py-4"
             onClick={(e) => {
-              SetMain(<Calculate/>);
+              SetMain(<ParkingInfo/>);
               $(".highlight").removeClass("highlight");
               $(e.target).addClass("highlight");
             }}
