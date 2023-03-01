@@ -19,7 +19,7 @@ const Field = (props) => (
 );
 
 function Calculate() {
-  var names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  var names = ['FUNDAY', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
   var days = [0, 0, 0, 0, 0, 0, 0];
   var comb = [0];
   function calu() {
