@@ -19,12 +19,25 @@ function ParkingTimer() {
 	const dateWithoutTime = tomorrow.toLocaleDateString("en-US", dateOptions);
 	// const currentTime = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
+	// useEffect(() => {
+	// 	const savedState = localStorage.getItem('countdownState');
+	// 	if (savedState) {
+	// 	  const { hours: savedHours} = JSON.parse(savedState);
+	// 	  console.log(savedHours);
+	// 	  setHours(savedHours);
+	// 	}
+	//   }, []);
+
+	// useEffect(() => {
+	// 	localStorage.setItem('countdownState', JSON.stringify({renderer}));
+	//   }, [hours]);
+
 	const btnClick = () => {
 		setIsActive(!isActive);
 	};
 
 	const handleTime = (e) => {
-		console.log(allDay);
+		// console.log(allDay);
 		if(e.target.value === '-1'){
 		setHours(-1);
 		setAllDay(true);
@@ -93,7 +106,12 @@ function ParkingTimer() {
 		if (completed) {
 			// Render a completed state
 			return <Completionist />;
-		} else {
+		} 
+		else {
+			//Reminder at the 20 minute mark
+			if (minutes === 20 && seconds === 0) {
+				setTimeout(() => alert("20 minutes Until Your Time is Up!"), 100);
+			  }
 			// Render a countdown
 			return (
 				<span className="bg-light">
