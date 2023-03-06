@@ -19,7 +19,7 @@ function GoogleLogin() {
 
 	return (
 		<div>
-			<h1>Google Login</h1>
+			<h1>Google Lasdogin</h1>
 			<div className="g-signin2" data-onsuccess={onSignIn}></div>
 			<div red={contentRef}></div>
 			<button onClick={signOut}>Sign Out</button>

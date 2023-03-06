@@ -22,7 +22,7 @@ export default function Navbar() {
         </div>
 
         <Clock
-          className="col  text-center"
+          className="col text-center"
           format={"h:mm:ss A"}
           ticking={true}
           timezone={"US/Pacific"}
