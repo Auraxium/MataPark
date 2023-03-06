@@ -1,40 +1,39 @@
 import React from "react";
 import $ from "jquery";
 
-var names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-var days = [0, 0, 0, 0, 0, 0, 0];
-var comb = [0];
-
-function calu() {
-	console.log(days)
-  let alertMessage = `It would cost you: $${
-    days.reduce((sum, a) => sum + a) * +comb
-  } total. Currently the parking pass for the semester is about $ 
-  
-    ${comb == 16 ? 220: comb == 12 ? 165: comb == 9 ? 110: comb  == 4 ? 55: 220}
-    `
-  //alert(alertMessage);
-	$('#result').html(alertMessage)
-}
-
-const Field = (props) => (
-  <div className="form-group">
-    <label>{names[props.index]}</label>
-    <select
-      onChange={e => days[props.index] = parseFloat(e.target.value)}
-      className="form-control"
-			defaultValue={0}
-    >
-      <option value="0">Not coming</option>
-      <option value="3">1hr</option>
-      <option value="5.5">2hr</option>
-      <option value="7.5">2-4hr</option>
-      <option value="9.5">4+hr</option>
-    </select>
-  </div>
-);
-
 function Calculate() {
+    const Field = (props) => (
+        <div className="form-group">
+          <label>{names[props.index]}</label>
+          <select
+            onChange={e => days[props.index] = parseFloat(e.target.value)}
+            className="form-control"
+                  defaultValue={0}
+          >
+            <option value="0">Not coming</option>
+            <option value="3">1hr</option>
+            <option value="5.5">2hr</option>
+            <option value="7.5">2-4hr</option>
+            <option value="9.5">4+hr</option>
+          </select>
+        </div>
+      );
+      
+  var names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+  var days = [0, 0, 0, 0, 0, 0, 0];
+  var comb = [0];
+
+  function calu() {
+    console.log(days)
+    let alertMessage = `It would cost you: $${
+      days.reduce((sum, a) => sum + a) * +comb
+    } total. Currently the parking pass for the semester is about $ 
+    
+      ${comb == 16 ? 220: comb == 12 ? 165: comb == 9 ? 110: comb  == 4 ? 55: 220}
+      `
+    //alert(alertMessage);
+    $('#result').html(alertMessage)
+  }
   return (
     <div className="container">
       <div className="col text-center">

@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
 import ParkingAvailability from "./ParkingAvailability";
 import EVTransportation from "./EVTransportation";
+import Calculate from "./Calculate";
 
 
 const delay = (secs) =>
