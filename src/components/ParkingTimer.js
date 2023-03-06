@@ -108,7 +108,7 @@ function ParkingTimer() {
 			return <Completionist />;
 		} 
 		else {
-			//Reminder at the 20 minute mark
+			//Reminder at the 20 minutes
 			if (minutes === 20 && seconds === 0) {
 				setTimeout(() => alert("20 minutes Until Your Time is Up!"), 100);
 			  }
