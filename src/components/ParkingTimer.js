@@ -152,20 +152,20 @@ function ParkingTimer() {
 							is for and we will remind you about 15 minutes before it expires.
 						</p>
 						<div
-							className="btn-group btn-group-lg mb-4"
+							className="btn-group btn-warning btn-group-lg mb-4"
 							role="group"
 							aria-label="Parking Hour Timer"
 						>
 							<button
 								type="button"
 								className={
-									isActive ? "btn btn-primary active" : "btn btn-warning"
+									isActive ? "btn btn-warning text-light active" : "btn text-light btn-warning"
 								}
 								onClick={(e) => {
 									btnClick();
 									handleTime(e);
 								}}
-								style={{ borderRight: "3px dotted blue" }}
+								style={{ borderRight: "3px dotted white" }}
 								value={1}
 							>
 								1 Hour
@@ -173,13 +173,13 @@ function ParkingTimer() {
 							<button
 								type="button"
 								className={
-									isActive ? "btn btn-primary active" : "btn btn-primary"
+									isActive ? "btn btn-warning text-light active" : "btn text-light btn-warning"
 								}
 								onClick={(e) => {
 									btnClick();
 									handleTime(e);
 								}}
-								style={{ borderRight: "3px dotted blue" }}
+								style={{ borderRight: "3px dotted white" }}
 								value={2}
 							>
 								2 Hours
@@ -187,13 +187,13 @@ function ParkingTimer() {
 							<button
 								type="button"
 								className={
-									isActive ? "btn btn-primary active" : "btn btn-primary"
+									isActive ? "btn btn-warning text-light active" : "btn text-light btn-warning"
 								}
 								onClick={(e) => {
 									btnClick();
 									handleTime(e);
 								}}
-								style={{ borderRight: "3px dotted blue" }}
+								style={{ borderRight: "3px dotted white" }}
 								value={4}
 							>
 								4 Hours
@@ -201,7 +201,7 @@ function ParkingTimer() {
 							<button
 								type="button"
 								className={
-									isActive ? "btn btn-primary active" : "btn btn-primary"
+									isActive ? "btn btn-warning text-light active" : "btn text-light btn-warning"
 								}
 								onClick={(e) => {
 									btnClick();
@@ -254,7 +254,7 @@ function ParkingTimer() {
 							<div className="col-auto">
 								<button
 									type="submit"
-									className="btn btn-primary"
+									className="btn text-light btn-warning"
 									value="Submit"
 								>
 									Submit
@@ -312,7 +312,7 @@ function ParkingTimer() {
 							<div className="col-auto">
 								<button
 									type="submit"
-									className="btn btn-primary"
+									className="btn text-light btn-warning"
 									value="Submit"
 								>
 									Submit
