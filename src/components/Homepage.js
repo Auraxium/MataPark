@@ -125,19 +125,6 @@ function Homepage() {
 	let nav = useNavigate();
 	var [main, SetMain] = useState(MiddleContent);
 
-	useEffect(() => {
-		(function (d, s, id) {
-			var js,
-				fjs = d.getElementsByTagName(s)[0];
-			if (!d.getElementById(id)) {
-				js = d.createElement(s);
-				js.id = id;
-				js.src = "https://weatherwidget.io/js/widget.min.js";
-				fjs.parentNode.insertBefore(js, fjs);
-			}
-		})(document, "script", "weatherwidget-io-js");
-	}, []);
-
 	return (
 		<div className="d-flex justify-content-center">
 			<div className="col-11">
