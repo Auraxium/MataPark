@@ -6,6 +6,7 @@ import $ from "jquery";
 import ParkingAvailability from "./ParkingAvailability";
 import EVTransportation from "./EVTransportation";
 import Calculate from "./Calculate";
+import TwitterFeed from "./TwitterFeed";
 
 const delay = (secs) =>
 	new Promise((resolve, reject) => setTimeout(() => resolve(""), secs));
@@ -27,7 +28,10 @@ const MiddleContent = () => (
 			alike. This app is dedicated to making sure your parking experience is
 			easy and convenient, from getting parking tips and finding spots no matter
 			what transportation you enjoy to permit buying help and getting closure
-			alerts, we have it all. <br /> <strong><em>Enjoy!</em></strong>
+			alerts, we have it all. <br />{" "}
+			<strong>
+				<em>Enjoy!</em>
+			</strong>
 		</p>
 		{/* <p className="">
 			NOTE: Currently CSUN uses license plate recognition software mounted on
@@ -46,7 +50,9 @@ const MiddleContent = () => (
 		<h2>Guide to Matapark</h2>
 		<ul className="guide" style={{ textAlign: "left", listStyle: "none" }}>
 			<li>
-				<strong><u>Parking Information:</u></strong>{" "}
+				<strong>
+					<u>Parking Information:</u>
+				</strong>{" "}
 				<p style={{ display: "inline-block" }}>
 					This is not your average parking info page, this page will have all
 					the tips and tricks students and alumni know about parking and
@@ -69,14 +75,18 @@ const MiddleContent = () => (
 				</p>
 			</li>
 			<li>
-				<strong><u>Parking Availability:</u></strong>{" "}
+				<strong>
+					<u>Parking Availability:</u>
+				</strong>{" "}
 				<p style={{ display: "block" }}>
 					Need a spot right now, but want to know how busy it is?
 					<br /> Get the latest parking lot vacancy info here.
 				</p>
 			</li>
 			<li>
-				<strong><u>E.V. & Transportation:</u></strong>{" "}
+				<strong>
+					<u>E.V. & Transportation:</u>
+				</strong>{" "}
 				<p style={{ display: "inline-block" }}>
 					Have an electric car or not driving your own car on campus?
 					<br />
@@ -86,7 +96,9 @@ const MiddleContent = () => (
 				</p>
 			</li>
 			<li>
-				<strong><u>Locate Lot:</u></strong>{" "}
+				<strong>
+					<u>Locate Lot:</u>
+				</strong>{" "}
 				<p style={{ display: "inline-block" }}>
 					Need to know the best parking lot for your schedule? <br />
 					Find the closest lot based on the building you want to go to by
@@ -94,7 +106,9 @@ const MiddleContent = () => (
 				</p>
 			</li>
 			<li>
-				<strong><u>Calculate:</u></strong>{" "}
+				<strong>
+					<u>Calculate:</u>
+				</strong>{" "}
 				<p style={{ display: "inline-block" }}>
 					Paying for parking, but not sure if your getting the best deal?
 					<br />
@@ -186,6 +200,8 @@ function Homepage() {
 							CSU - NORTHRIDGE WEATHER
 						</a>
 						<br />
+						<h5 className="text-center">Road and Highway Feed</h5>
+						<TwitterFeed />
 						<div className="mb-1 font-big h2">Contact Us</div>
 						<div className="">
 							<strong>

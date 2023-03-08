@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Carousel } from "react-carousel-minimal";
+import "../styles/ParkingInfo.css";
 import B5 from "./Images/B5_Feb2023.jpg";
 import B5Station from "./Images/Paystation2.jpeg";
 import E6Station from "./Images/E6Station_Nov2022.jpg";
@@ -82,7 +83,7 @@ function ParkingInfo() {
 					<a href="#"> Visitor Parking </a>|
 					<a href="#"> Faculty & Staff Parking</a>
 				</h6>
-				<h3 id="Students"> Student Parking</h3>
+				<h3 id="Students"> Student Parking Tips and Need to Knows</h3>
 				<p>
 					Students can purchase a semester permit or a daily parking permit to
 					park. Student parking lots are:{" "}
@@ -103,6 +104,69 @@ function ParkingInfo() {
 						Housing residents, ONLY.{" "}
 					</li>
 				</ul>
+				<h5>
+					<em>Parking Tips for Beginning of Semester:</em>
+				</h5>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								Many students generally will choose daily parking or park on the
+								streets for the first few weeks of school.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								If your strapped for cash - street parking may be the way to go,
+								but it will cost you in distance and time so be early or a quick
+								walker!
+							</td>
+						</tr>
+						<tr>
+							<td>
+								If you love convenience more than saving a few bucks, opt for
+								daily parking in one of the lots. Lots that have heavy traffic
+								like E6 may be completely full the first few weeks of class so
+								try to get in early (before 9am) or much later in the day (late
+								afternoon).
+							</td>
+						</tr>
+						<tr>
+							<td>
+								Don't want to risk going to a full lot? choose a parking
+								structure like B3 or B5 instead. You may not get a spot near the
+								elevators, but you will find a spot!
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+
+                  {/* List version */}
+				{/* <ul>
+					<li>
+						Many students generally will choose daily parking or park on the
+						streets for the first few weeks of school.
+					</li>
+					<hr className="short-hr" />
+					<li>
+						If your strapped for cash - street parking may be the way to go, but
+						it will cost you in distance and time so be early or a quick walker!
+					</li>{" "}
+					<hr className="short-hr" />
+					<li>
+						If you love convenience more than saving a few bucks, opt for daily
+						parking in one of the lots. Lots that have heavy traffic like E6 may
+						be completely full the first few weeks of class so try to get in
+						early (before 9am) or much later in the day (late afternoon).
+					</li>
+					<hr className="short-hr" />
+					<li>
+						Don't want to risk going to a full lot? choose a parking structure
+						like B3 or B5 instead. You may not get a spot near the elevators,
+						but you will find a spot!
+					</li>
+				</ul> */}
 			</div>
 		</>
 	);
