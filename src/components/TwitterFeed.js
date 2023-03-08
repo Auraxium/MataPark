@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Timeline } from "react-twitter-widgets";
 
 function TwitterFeed() {

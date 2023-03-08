@@ -7,6 +7,7 @@ import ParkingAvailability from "./ParkingAvailability";
 import EVTransportation from "./EVTransportation";
 import Calculate from "./Calculate";
 import TwitterFeed from "./TwitterFeed";
+import WeatherWidget from "./WeatherWidget";
 
 const delay = (secs) =>
 	new Promise((resolve, reject) => setTimeout(() => resolve(""), secs));
@@ -187,18 +188,7 @@ function Homepage() {
 				<div className="row m-0">
 					<div className="col grey">
 						<br />
-						<a
-							className="weatherwidget-io"
-							href="https://forecast7.com/en/34d25n118d53/91330/?unit=us"
-							data-label_1="CSU - NORTHRIDGE"
-							data-label_2="WEATHER"
-							data-font="Helvetica"
-							data-icons="Climacons Animated"
-							data-days="3"
-							data-theme="weather_one"
-						>
-							CSU - NORTHRIDGE WEATHER
-						</a>
+						<WeatherWidget />
 						<br />
 						<h5 className="text-center">Road and Highway Feed</h5>
 						<TwitterFeed />
