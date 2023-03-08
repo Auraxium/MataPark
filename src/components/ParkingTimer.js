@@ -94,9 +94,9 @@ function ParkingTimer() {
 		setAllDay(false);
 	}
 
-	const handleAlertDismiss = () => {
-		setShowAlert(false);
-	};
+	// const handleAlertDismiss = () => {
+	// 	setShowAlert(false);
+	// };
 
 	// Random component
 	const Completionist = () => (
