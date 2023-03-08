@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
 import $ from "jquery";
 import "../styles.css";
 
@@ -79,15 +78,8 @@ export default function LocateLot() {
             alt=""
             style={{ objectFit: "none", objectPosition: "20% 90%" }}
           /> */}
-          <Map zoom={14}>
-            <Marker onClick={this.onMarkerClick} name={"Current location"} />
-
-            <InfoWindow onClose={this.onInfoWindowClose}>
-              <div>
-                <h1>{this.state.selectedPlace.name}</h1>
-              </div>
-            </InfoWindow>
-          </Map>
+        
+          
         </div>
 
         <div className="col-4">
