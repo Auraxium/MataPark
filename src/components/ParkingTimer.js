@@ -134,7 +134,7 @@ function ParkingTimer() {
 				)}
 			</div>
 			<div className="col">
-				<div className="text-center text-light mb-2 bg py-4 rounded-3 border shadow">
+				<div className="text-center text-light mb-2 bg-warning py-4 rounded-3 border shadow">
 					<h1 className="fw-bold display-5">Parking Timer</h1>
 					<h3>Don't remember how long you parked your car? We got you!</h3>
 				</div>
@@ -159,7 +159,7 @@ function ParkingTimer() {
 							<button
 								type="button"
 								className={
-									isActive ? "btn btn-primary active" : "btn btn-primary"
+									isActive ? "btn btn-primary active" : "btn btn-warning"
 								}
 								onClick={(e) => {
 									btnClick();
