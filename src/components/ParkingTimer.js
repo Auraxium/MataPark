@@ -118,7 +118,9 @@ function ParkingTimer() {
 				<span className="bg-light">
 					Time Left:
 					<br />
-					{hours}:{minutes}:{seconds}
+					{hours > 0 && `${hours}:`}
+    				{hours > 0 || minutes > 0 ? `${minutes}:` : ''}
+    				{seconds}
 				</span>
 			);
 		}
