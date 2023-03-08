@@ -1,0 +1,22 @@
+.short-hr {
+	display: block;
+	width: 30%;
+    border: none;
+  border-top: 2px solid #ff0000;
+  }
+
+  table{
+    border: 2px groove rgba(179, 171, 171, 0.998);
+  }
+  
+  td {
+    padding: 8px;
+    text-align: left;
+  }
+  tbody tr:nth-child(even) {
+    background-color: #fbd3d3;
+  }
+
+  tbody tr:nth-child(odd) {
+    background-color: #fffafa;
+  }

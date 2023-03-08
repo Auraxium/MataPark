@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import "../styles/ParkingTimer.css";
 import Countdown from "react-countdown";
+import WarningAlert from "./WarningAlert";
 
 function ParkingTimer() {
 	const [isActive, setIsActive] = useState(false);
 	const [hours, setHours] = useState(0);
 	const [message, setMessage] = useState(``);
 	const [allDay, setAllDay] = useState(false);
+	const [showAlert, setShowAlert] = useState(false);
 	const now = new Date();
 	const tomorrow = new Date();
 	tomorrow.setDate(now.getDate() + 1);
@@ -38,22 +40,21 @@ function ParkingTimer() {
 
 	const handleTime = (e) => {
 		// console.log(allDay);
-		if(e.target.value === '-1'){
-		setHours(-1);
-		setAllDay(true);
-		}
-		else{
-		const selectedHours = parseInt(e.target.value, 10);
-		setHours(selectedHours);
-		setAllDay(false);
+		if (e.target.value === "-1") {
+			setHours(-1);
+			setAllDay(true);
+		} else {
+			const selectedHours = parseInt(e.target.value, 10);
+			setHours(selectedHours);
+			setAllDay(false);
 		}
 	};
 
 	function handleSubmit(event) {
 		event.preventDefault(); // Prevents the form from refreshing the page
-		const timeParked = document.getElementById('TicketHours').value;
-		const ticketHours = document.getElementById('TicketHoursSelect').value;
-		const timeParts = timeParked.split(':');
+		const timeParked = document.getElementById("TicketHours").value;
+		const ticketHours = document.getElementById("TicketHoursSelect").value;
+		const timeParts = timeParked.split(":");
 		const ticketTime = new Date();
 		ticketTime.setHours(timeParts[0], timeParts[1], 0, 0);
 
@@ -61,61 +62,62 @@ function ParkingTimer() {
 		const timeDiffMs = now.getTime() - ticketTime.getTime();
 
 		// Convert the time difference from milliseconds to hours with decimal
-		const timeLeft = (timeDiffMs/3600000).toFixed(1);
+		const timeLeft = (timeDiffMs / 3600000).toFixed(1);
 
 		// console.log('Time Parked:', timeParked);
 		// console.log('Ticket Hours:', ticketHours);
 		// console.log('Current time:', currentTime);
 		// console.log('Time left:', timeLeft);
 
-		if(ticketHours === '24'){
+		if (ticketHours === "24") {
 			setHours(-1);
 			setAllDay(true);
-		}
-		else{
+		} else {
 			setHours(ticketHours - timeLeft);
 			setAllDay(false);
 		}
-	  };
+	}
 
 	function handleSubmit2(event) {
 		event.preventDefault(); // Prevents the form from refreshing the page
-		const timeParked = document.getElementById('StreetHours').value;
-		const ticketHours = document.getElementById('StreetHoursSelect').value;
-		const timeParts = timeParked.split(':');
+		const timeParked = document.getElementById("StreetHours").value;
+		const ticketHours = document.getElementById("StreetHoursSelect").value;
+		const timeParts = timeParked.split(":");
 		const ticketTime = new Date();
 		ticketTime.setHours(timeParts[0], timeParts[1], 0, 0);
 
 		// Calculate the time difference between the current time and the ticket time
 		const timeDiffMs = now.getTime() - ticketTime.getTime();
-		const timeLeft = (timeDiffMs/3600000).toFixed(3);
-
-		// console.log('Time Parked:', timeParked);
-		// console.log('Ticket Hours:', ticketHours);
-		// console.log('Current time:', currentTime);
-		// console.log('Time left:', timeLeft);
-
+		const timeLeft = (timeDiffMs / 3600000).toFixed(3);
 		setHours(ticketHours - timeLeft);
+		console.log("hours:" + hours);
 		setAllDay(false);
-	  };
+	}
+
+	const handleAlertDismiss = () => {
+		setShowAlert(false);
+	};
+
 	// Random component
-	const Completionist = () => <span className="bg-light">You're Parking has Expired!</span>;
+	const Completionist = () => (
+		<span className="bg-light">You're Parking has Expired!</span>
+	);
 
 	// Renderer callback with condition
 	const renderer = ({ hours, minutes, seconds, completed }) => {
 		if (completed) {
 			// Render a completed state
 			return <Completionist />;
-		} 
-		else {
-			//Reminder at the 20 minute mark
-			if (minutes === 20 && seconds === 0) {
-				setTimeout(() => alert("20 minutes Until Your Time is Up!"), 100);
-			  }
+		} else {
+			//Reminder at the 20 minutes
+			if (minutes === 15 && seconds === 0) {
+				setShowAlert(true);
+			}
 			// Render a countdown
 			return (
 				<span className="bg-light">
-				Time Left:<br/>
+					Time Left:
+					<br />
 					{hours}:{minutes}:{seconds}
 				</span>
 			);
@@ -123,6 +125,14 @@ function ParkingTimer() {
 	};
 	return (
 		<div className="container mt-4">
+			<div className="alert-overlay">
+				{showAlert && (
+					<WarningAlert
+						title="Reminder Alert"
+						message="You only have 20 minutes left before you ticket expires!"
+					/>
+				)}
+			</div>
 			<div className="col">
 				<div className="text-center text-light mb-2 bg py-4 rounded-3 border shadow">
 					<h1 className="fw-bold display-5">Parking Timer</h1>
@@ -139,7 +149,7 @@ function ParkingTimer() {
 							Press the button corresponding to the hours for your ticket to
 							start a timer now <br />
 							or tell us approximately when you arrived and how long your ticket
-							is for and we will remind you about 20 minutes before it expires.
+							is for and we will remind you about 15 minutes before it expires.
 						</p>
 						<div
 							className="btn-group btn-group-lg mb-4"
@@ -208,7 +218,10 @@ function ParkingTimer() {
 							<strong>OR</strong>
 						</p>
 
-						<form onSubmit={handleSubmit} className="row gy-2 gx-3 align-items-center justify-content-center mt-4">
+						<form
+							onSubmit={handleSubmit}
+							className="row gy-2 gx-3 align-items-center justify-content-center mt-4"
+						>
 							<div className="col-auto">
 								<label className="visually-hidden" htmlFor="TicketHours">
 									Time Parked
@@ -260,7 +273,10 @@ function ParkingTimer() {
 							when you need to leave so you have a peace of mind - no tickets
 							today!
 						</p>
-						<form onSubmit={handleSubmit2} className="row gy-2 gx-3 align-items-center justify-content-center mt-4">
+						<form
+							onSubmit={handleSubmit2}
+							className="row gy-2 gx-3 align-items-center justify-content-center mt-4"
+						>
 							<div className="col-auto">
 								<label className="visually-hidden" htmlFor="StreetHours">
 									Time Parked
@@ -307,16 +323,21 @@ function ParkingTimer() {
 				</div>
 			</div>
 			<div className="text-center mb-2 mt-2 pt-4">
-					<h1 className="fw-bold display-5 pb-4">
-						{allDay === true && message && <p className="bg-light">{message}</p>}
-						{allDay === false && hours > 0 && (
+				<h1 className="fw-bold display-5 pb-4">
+					{allDay === true && message && <p className="bg-light">{message}</p>}
+					{allDay === false && hours < 0 && (
+						<p className="bg-light">
+							Time difference less than 0, please adjust the time or am/pm!
+						</p>
+					)}
+					{allDay === false && hours > 0 && (
 						<Countdown
-							style={{ fontSize: "1.5rem"}}
+							style={{ fontSize: "1.5rem" }}
 							date={Date.now() + hours * 3600000}
 							renderer={renderer}
 						/>
-						)}
-					</h1>
+					)}
+				</h1>
 			</div>
 		</div>
 	);
