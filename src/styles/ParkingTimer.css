@@ -2,8 +2,19 @@
     min-height: 50vh; /* adjust value as needed */
   }
 .bg{
-    background-color: rgba(2, 57, 166, 0.821);
+    background-color: rgba(246, 28, 4, 0.821);
     background-image: var(--bs-gradient);
+}
+
+.alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* .countdown {
     position: absolute;

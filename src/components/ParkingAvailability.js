@@ -8,8 +8,8 @@ import "../styles/ParkingAvailability.css";
 
 const Lot = (props) => (
   <div className="d-flex ">
-    <div className="col-6 border font-big">{props.lot}:</div>
-    <div className="col-6 border font-big text-end">
+    <div className="col-6 border font-big px-2">{props.lot}:</div>
+    <div className="col-6 border font-big text-end px-2">
       {props.slots} {props.slots == "Open" ? "" : "Spaces left"}
     </div>
   </div>
