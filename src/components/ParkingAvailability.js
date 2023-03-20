@@ -26,7 +26,7 @@ function ParkingAvailability() {
       let lotCookie = JSON.parse(localStorage.getItem("lots-cookie"));
 
       if (now - lotCookie.date < 10 * 1000 * 60) 
-				setLots(lotCookie.data);
+				setLots(lotCookie.data.lots);
 
       // if ((now - +localStorage.getItem("last-PA-request")) < 60000) {
 			// 	loadSpinner.current.style.display = "none";
@@ -37,15 +37,15 @@ function ParkingAvailability() {
 
     localStorage.setItem("last-PA-request", now);
 
-    axios.get("https://parking-map.auraxium.online").then((res) => {
+    axios.get("https://parking-map.auraxium.online/parkmap").then((res) => {
       let lotData = {
-        data: res.data.lots,
+        data: res.data,
         date: Date.now(),
       };
       //console.log(lotData)
 
       localStorage.setItem("lots-cookie", JSON.stringify(lotData));
-      setLots(lotData.data);
+      setLots(lotData.data.lots);
 
       console.log(lotData)
       loadSpinner.current.style.display = "none";
