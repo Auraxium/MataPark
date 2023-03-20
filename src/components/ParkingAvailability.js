@@ -37,9 +37,9 @@ function ParkingAvailability() {
 
     localStorage.setItem("last-PA-request", now);
 
-    axios.get(port + "/parking-availability").then((res) => {
+    axios.get("https://parking-map.auraxium.online").then((res) => {
       let lotData = {
-        data: res.data,
+        data: res.data.lots,
         date: Date.now(),
       };
       //console.log(lotData)
