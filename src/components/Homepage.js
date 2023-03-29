@@ -137,6 +137,7 @@ function Homepage() {
 				localStorage.setItem("googToken", JSON.stringify(googToken));
 				localStorage.removeItem("googUUID");
 				console.log(googToken);
+				$('.nav-names').html(googToken.username)
 			})
 		} else if (localStorage.getItem("googToken") && localStorage.getItem("googToken") != 'undefined') {
 			googToken = JSON.parse(localStorage.getItem("googToken"));

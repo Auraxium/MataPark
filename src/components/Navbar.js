@@ -36,7 +36,7 @@ export default function Navbar() {
             className="col-auto nav-names"
             style={{ cursor: "pointer" }}
             onClick={() => {
-              if(!localStorage.getItem("googAccount")) {
+              if(!localStorage.getItem("googToken")) {
                 let uuid = crypto.randomUUID();
                 localStorage.setItem('googUUID', uuid);
                 axios.post(port + '/googOauth', {uuid: uuid, origin: window.location.origin})
