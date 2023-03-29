@@ -25,8 +25,8 @@ function ParkingAvailability() {
     if (localStorage.getItem("lots-cookie")) {
       let lotCookie = JSON.parse(localStorage.getItem("lots-cookie"));
 
-      if (now - lotCookie.date < 10 * 1000 * 60) 
-				setLots(lotCookie.data.lots);
+      if (now - lotCookie.now < 10 * 1000 * 60) 
+				setLots(lotCookie.lots);
 
       // if ((now - +localStorage.getItem("last-PA-request")) < 60000) {
 			// 	loadSpinner.current.style.display = "none";
@@ -35,22 +35,17 @@ function ParkingAvailability() {
 			// }
     }
 
-    localStorage.setItem("last-PA-request", now);
+    //localStorage.setItem("last-PA-request", now);
 
-    axios.get("https://parking-map.auraxium.online/parkmap").then((res) => {
-      let lotData = {
-        data: res.data,
-        date: Date.now(),
-      };
-      //console.log(lotData)
+    axios.get("http://localhost:8080/parkmap").then((res) => {
 
-      localStorage.setItem("lots-cookie", JSON.stringify(lotData));
-      setLots(lotData.data.lots);
+      localStorage.setItem("lots-cookie", JSON.stringify(res.data));
+      setLots(res.data.lots);
 
-      console.log(lotData)
       loadSpinner.current.style.display = "none";
     }).catch(err => {
 			console.log(err);
+      setLots(null)
       loadSpinner.current.style.display = "none";
 		});
   }, []);
@@ -65,7 +60,7 @@ function ParkingAvailability() {
       </div>
 
       <div id="lots">
-        {!lots.map ? "server broke :(" : lots.map((e) => (
+        {!lots ? "server broke :(" : lots.map((e) => (
           <Lot lot={e.lot} slots={e.slots} key={crypto.randomUUID()} />
         ))}
       </div>

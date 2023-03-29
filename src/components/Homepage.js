@@ -3,6 +3,8 @@ import ParkingInfo from "./ParkingInfo";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
+import axios from "axios"
+import port from '../port'
 import ParkingAvailability from "./ParkingAvailability";
 import EVTransportation from "./EVTransportation";
 import Calculate from "./Calculate";
@@ -124,6 +126,23 @@ const MiddleContent = () => (
 function Homepage() {
 	let nav = useNavigate();
 	var [main, SetMain] = useState(MiddleContent);
+
+	useEffect(() => {
+		let googToken;
+
+		if (localStorage.getItem("googUUID")) {
+			console.log('uuids nuts')
+			axios.post(port + '/googGetToken', { uuid: localStorage.getItem("googUUID") }).then(ax => {
+				googToken = ax.data;
+				localStorage.setItem("googToken", JSON.stringify(googToken));
+				localStorage.removeItem("googUUID");
+				console.log(googToken);
+			})
+		} else if (localStorage.getItem("googToken") && localStorage.getItem("googToken") != 'undefined') {
+			googToken = JSON.parse(localStorage.getItem("googToken"));
+			$('.nav-names').html(googToken.username)
+		}
+	}, [])
 
 	return (
 		<div className="d-flex justify-content-center">
