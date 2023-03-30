@@ -139,15 +139,16 @@ function Homepage() {
 				console.log(googToken);
 				$('.nav-names').html('Welcome, ' + googToken.username)
 			})
-		} else if (localStorage.getItem("googToken") && localStorage.getItem("googToken") != 'undefined') {
+		} else if (localStorage.getItem("googToken")) {
 			googToken = JSON.parse(localStorage.getItem("googToken"));
-			$('.nav-names').html('Welcome, ' + googToken.username)
+			if(!googleToken.username) return localStorage.removeItem("googToken");
+			$('.nav-names').html('Welcome, ' + googToken.username);
 		}
 	}, [])
 
 	return (
 		<div className="d-flex justify-content-center">
-			<div className="col-11">
+			<div className="col-m-11">
 				<div className="d-flex m-0 text-center text-white bg-black tab-header">
 					<div
 						className="col-3 py-4 highlight"
