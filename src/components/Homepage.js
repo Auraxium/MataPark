@@ -141,7 +141,7 @@ function Homepage() {
 			})
 		} else if (localStorage.getItem("googToken")) {
 			googToken = JSON.parse(localStorage.getItem("googToken"));
-			if(!googleToken.username) return localStorage.removeItem("googToken");
+			if(!googToken.username) return localStorage.removeItem("googToken");
 			$('.nav-names').html('Welcome, ' + googToken.username);
 		}
 	}, [])
