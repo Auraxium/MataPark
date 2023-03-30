@@ -42,7 +42,10 @@ export default function Navbar() {
                 axios.post(port + '/googOauth', {uuid: uuid, origin: window.location.origin})
                 .then(ax => window.location.replace(ax.data.url))
                 .catch(console.log);
-              } 
+              } else {
+                localStorage.removeItem('googToken');
+                this.innerHTML = 'Login';
+              }
             }}
           >
             Login
