@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import Clock from "react-live-clock";
 import axios from "axios"
 import port from '../port'
+import $ from "jquery"
 
 export default function Navbar() {
   let nav = useNavigate();
@@ -44,7 +45,7 @@ export default function Navbar() {
                 .catch(console.log);
               } else {
                 localStorage.removeItem('googToken');
-                this.innerHTML = 'Login';
+                $('.nav-names').html('Logged out');
               }
             }}
           >
