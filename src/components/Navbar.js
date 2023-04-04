@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Clock from "react-live-clock";
+import axios from "axios"
+import port from '../port'
+import $ from "jquery"
 
 export default function Navbar() {
   let nav = useNavigate();
@@ -31,9 +34,20 @@ export default function Navbar() {
 
         <div className="col row justify-content-end">
           <h2
-            className="col-auto"
+            className="col-auto nav-names"
             style={{ cursor: "pointer" }}
-            onClick={() => nav("/Login")}
+            onClick={() => {
+              if(!localStorage.getItem("googToken")) {
+                let uuid = crypto.randomUUID();
+                localStorage.setItem('googUUID', uuid);
+                axios.post(port + '/googOauth', {uuid: uuid, origin: window.location.origin})
+                .then(ax => window.location.replace(ax.data.url))
+                .catch(console.log);
+              } else {
+                localStorage.removeItem('googToken');
+                $('.nav-names').html('Logged out');
+              }
+            }}
           >
             Login
           </h2>

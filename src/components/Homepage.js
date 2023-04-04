@@ -3,6 +3,8 @@ import ParkingInfo from "./ParkingInfo";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
+import axios from "axios"
+import port from '../port'
 import ParkingAvailability from "./ParkingAvailability";
 import EVTransportation from "./EVTransportation";
 import Calculate from "./Calculate";
@@ -125,9 +127,28 @@ function Homepage() {
 	let nav = useNavigate();
 	var [main, SetMain] = useState(MiddleContent);
 
+	useEffect(() => {
+		let googToken;
+
+		if (localStorage.getItem("googUUID")) {
+			console.log('uuids nuts')
+			axios.post(port + '/googGetToken', { uuid: localStorage.getItem("googUUID") }).then(ax => {
+				googToken = ax.data;
+				localStorage.setItem("googToken", JSON.stringify(googToken));
+				localStorage.removeItem("googUUID");
+				console.log(googToken);
+				$('.nav-names').html('Welcome, ' + googToken.username)
+			})
+		} else if (localStorage.getItem("googToken")) {
+			googToken = JSON.parse(localStorage.getItem("googToken"));
+			if(!googToken.username) return localStorage.removeItem("googToken");
+			$('.nav-names').html('Welcome, ' + googToken.username);
+		}
+	}, [])
+
 	return (
 		<div className="d-flex justify-content-center">
-			<div className="col-11">
+			<div className="col-m-11">
 				<div className="d-flex m-0 text-center text-white bg-black tab-header">
 					<div
 						className="col-3 py-4 highlight"
