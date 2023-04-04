@@ -8,7 +8,6 @@ import EVTransportation from './components/EVTransportation';
 import ParkingTimer from './components/ParkingTimer'
 import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
-
 function App() {
 
   return (
