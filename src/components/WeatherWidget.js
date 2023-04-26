@@ -2,12 +2,18 @@ import React from "react";
 
 export default class WeatherWidget extends React.PureComponent {
 	componentDidMount() {
-		window.onload = () => {
-			const script = document.createElement("script");
-			script.src = "https://weatherwidget.io/js/widget.min.js";
-			script.async = true;
-			document.body.appendChild(script);
-		};
+		this.loadScript();
+	}
+
+	componentDidUpdate() {
+		this.loadScript();
+	}
+
+	loadScript() {
+		const script = document.createElement("script");
+		script.src = "https://weatherwidget.io/js/widget.min.js";
+		script.async = true;
+		document.body.appendChild(script);
 	}
 
 	render() {
