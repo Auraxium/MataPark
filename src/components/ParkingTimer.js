@@ -97,7 +97,7 @@ function ParkingTimer() {
 			return <Completionist />;
 		} else {
 			//Reminder at the 20 minutes
-			if (minutes <= 15 && seconds === 0) {
+			if (minutes === 15 && seconds === 0) {
 				setShowAlert(true);
 			}
 			// Render a countdown
