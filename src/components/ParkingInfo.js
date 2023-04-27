@@ -142,7 +142,7 @@ function ParkingInfo() {
 							<td>
 								If you're planning on getting a day pass, the lines are usually
 								really long the first week, so give yourself lots of time before
-								your class starts to waiting in that line.
+								your class starts to wait in that line.
 							</td>
 						</tr>
 					</tbody>
