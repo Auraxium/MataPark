@@ -3,8 +3,8 @@ import ParkingInfo from "./ParkingInfo";
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import $ from "jquery";
-import axios from "axios"
-import port from '../port'
+import axios from "axios";
+import port from "../port";
 import ParkingAvailability from "./ParkingAvailability";
 import EVTransportation from "./EVTransportation";
 import Calculate from "./Calculate";
@@ -83,7 +83,9 @@ const MiddleContent = () => (
 				</strong>{" "}
 				<p style={{ display: "block" }}>
 					Need a spot right now, but want to know how busy it is?
-					<br /> Get the latest parking lot vacancy info here.
+					<br /> Need information about street parking?
+					<br /> Get the latest parking lot vacancy and street parking info
+					here.
 				</p>
 			</li>
 			<li>
@@ -131,20 +133,24 @@ function Homepage() {
 		let googToken;
 
 		if (localStorage.getItem("googUUID")) {
-			console.log('uuids nuts')
-			axios.post(port + '/googGetToken', { uuid: localStorage.getItem("googUUID") }).then(ax => {
-				googToken = ax.data;
-				localStorage.setItem("googToken", JSON.stringify(googToken));
-				localStorage.removeItem("googUUID");
-				console.log(googToken);
-				$('.nav-names').html('Welcome, ' + googToken.username)
-			})
+			console.log("uuids nuts");
+			axios
+				.post(port + "/googGetToken", {
+					uuid: localStorage.getItem("googUUID"),
+				})
+				.then((ax) => {
+					googToken = ax.data;
+					localStorage.setItem("googToken", JSON.stringify(googToken));
+					localStorage.removeItem("googUUID");
+					console.log(googToken);
+					$(".nav-names").html("Welcome, " + googToken.username);
+				});
 		} else if (localStorage.getItem("googToken")) {
 			googToken = JSON.parse(localStorage.getItem("googToken"));
-			if(!googToken.username) return localStorage.removeItem("googToken");
-			$('.nav-names').html('Welcome, ' + googToken.username);
+			if (!googToken.username) return localStorage.removeItem("googToken");
+			$(".nav-names").html("Welcome, " + googToken.username);
 		}
-	}, [])
+	}, []);
 
 	return (
 		<div className="d-flex justify-content-center">

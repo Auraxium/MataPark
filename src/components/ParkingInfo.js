@@ -138,11 +138,18 @@ function ParkingInfo() {
 								elevators, but you will find a spot!
 							</td>
 						</tr>
+						<tr>
+							<td>
+								If you're planning on getting a day pass, the lines are usually
+								really long the first week, so give yourself lots of time before
+								your class starts to waiting in that line.
+							</td>
+						</tr>
 					</tbody>
 				</table>
 				<br />
 
-                  {/* List version */}
+				{/* List version */}
 				{/* <ul>
 					<li>
 						Many students generally will choose daily parking or park on the
