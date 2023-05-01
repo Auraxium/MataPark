@@ -1662,11 +1662,6 @@
   "resolved" "https://registry.npmjs.org/@react-leaflet/core/-/core-2.1.0.tgz"
   "version" "2.1.0"
 
-"@react-oauth/google@^0.8.0":
-  "integrity" "sha512-xmIhYvvaBSblOzo3Fqv762lqub92SOFR8eRR7QpPyFPZEXZcOymaMuEkRSUKUrbu+9wfB8qtOaGMRJzrN7U2PA=="
-  "resolved" "https://registry.npmjs.org/@react-oauth/google/-/google-0.8.0.tgz"
-  "version" "0.8.0"
-
 "@remix-run/router@1.0.2":
   "integrity" "sha512-GRSOFhJzjGN+d4sKHTMSvNeUPoZiDHWmRnXfzaxrqe7dE/Nzlc8BiMSJdLDESZlndM7jIUrZ/F4yWqVYlI0rwQ=="
   "resolved" "https://registry.npmjs.org/@remix-run/router/-/router-1.0.2.tgz"
@@ -7764,7 +7759,7 @@
     "strip-ansi" "^6.0.1"
     "text-table" "^0.2.0"
 
-"react-dom@*", "react-dom@^16.8 || ^17 || ^18", "react-dom@^18.0.0", "react-dom@^18.2.0", "react-dom@>= 15", "react-dom@>=16.14.0", "react-dom@>=16.6.0", "react-dom@>=16.8", "react-dom@>=16.8.0":
+"react-dom@*", "react-dom@^16.8 || ^17 || ^18", "react-dom@^18.0.0", "react-dom@^18.2.0", "react-dom@>= 15", "react-dom@>=16.14.0", "react-dom@>=16.6.0", "react-dom@>=16.8":
   "integrity" "sha512-6IMTriUmvsjHUjNtEDudZfuDQUoWXVxKHhlEGSk81n4YFS+r/Kl99wXiwlVXtPBtJenozv2P+hxDsw9eA7Xo6g=="
   "resolved" "https://registry.npmjs.org/react-dom/-/react-dom-18.2.0.tgz"
   "version" "18.2.0"

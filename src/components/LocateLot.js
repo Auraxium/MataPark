@@ -70,6 +70,9 @@ export default function LocateLot() {
 					
       </GoogleMap>}
       </div>
+			<button onClick={() => {
+				console.log(map)
+			}}>map</button>
     </>
   );
 }

@@ -41,7 +41,7 @@ export default function Navbar() {
                 let uuid = crypto.randomUUID();
                 localStorage.setItem('googUUID', uuid);
                 axios.post(port + '/googOauth', {uuid: uuid, origin: window.location.origin})
-                .then(ax => window.location.replace(ax.data.url))
+                .then(ax => window.location.href = (ax.data.url))
                 .catch(console.log);
               } else {
                 localStorage.removeItem('googToken');
