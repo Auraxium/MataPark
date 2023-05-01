@@ -39,64 +39,81 @@ const MiddleContent = () => (
 				</em>
 			</strong>
 		</p> */}
-    <hr />
-    <h2>Guide to Matapark</h2>
-    <ul className="guide" style={{ textAlign: "left", listStyle: "none" }}>
-      <li>
-        <strong>
-          <u>Parking Information:</u>
-        </strong>{" "}
-        <p style={{ display: "inline-block" }}>
-          This is not your average parking info page, this page will have all the tips and tricks students and alumni know about parking and transportation on campus. <br />
-          Want to know:
-          <ul>
-            <li>the best time to be on campus for a chance at a good parking spot?</li>
-            <li>where to park on the streets if you don't want to pay for parking on campus?</li>
-            <li>locations that are ideal to get picked up or dropped off at?</li>
-          </ul>
-          Then go to the Parking Information tab to learn what students are saying.
-        </p>
-      </li>
-      <li>
-        <strong>
-          <u>Parking Availability:</u>
-        </strong>{" "}
-        <p style={{ display: "block" }}>
-          Need a spot right now, but want to know how busy it is?
-          <br /> Get the latest parking lot vacancy info here.
-        </p>
-      </li>
-      <li>
-        <strong>
-          <u>E.V. & Transportation:</u>
-        </strong>{" "}
-        <p style={{ display: "inline-block" }}>
-          Have an electric car or not driving your own car on campus?
-          <br />
-          This is your source for all Electric Vehicle and Alternative Transportation needs including E.V. stations around campus, places you can board/bike without fees, bus schedules, and rideshare information.
-        </p>
-      </li>
-      <li>
-        <strong>
-          <u>Locate Lot:</u>
-        </strong>{" "}
-        <p style={{ display: "inline-block" }}>
-          Need to know the best parking lot for your schedule? <br />
-          Find the closest lot based on the building you want to go to by searching or selecting it from our list.
-        </p>
-      </li>
-      <li>
-        <strong>
-          <u>Calculate:</u>
-        </strong>{" "}
-        <p style={{ display: "inline-block" }}>
-          Paying for parking, but not sure if your getting the best deal?
-          <br />
-          Try our parking calculator to find out if you can save some money during your semester.
-        </p>{" "}
-      </li>
-    </ul>
-  </div>
+
+		<hr />
+		<h2>Guide to Matapark</h2>
+		<ul className="guide" style={{ textAlign: "left", listStyle: "none" }}>
+			<li>
+				<strong>
+					<u>Parking Information:</u>
+				</strong>{" "}
+				<p style={{ display: "inline-block" }}>
+					This is not your average parking info page, this page will have all
+					the tips and tricks students and alumni know about parking and
+					transportation on campus. <br />
+					Want to know:
+					<ul>
+						<li>
+							the best time to be on campus for a chance at a good parking spot?
+						</li>
+						<li>
+							where to park on the streets if you don't want to pay for parking
+							on campus?
+						</li>
+						<li>
+							locations that are ideal to get picked up or dropped off at?
+						</li>
+					</ul>
+					Then go to the Parking Information tab to learn what students are
+					saying.
+				</p>
+			</li>
+			<li>
+				<strong>
+					<u>Parking Availability:</u>
+				</strong>{" "}
+				<p style={{ display: "block" }}>
+					Need a spot right now, but want to know how busy it is?
+					<br /> Need information about street parking?
+					<br /> Get the latest parking lot vacancy and street parking info
+					here.
+				</p>
+			</li>
+			<li>
+				<strong>
+					<u>E.V. & Transportation:</u>
+				</strong>{" "}
+				<p style={{ display: "inline-block" }}>
+					Have an electric car or not driving your own car on campus?
+					<br />
+					This is your source for all Electric Vehicle and Alternative
+					Transportation needs including E.V. stations around campus, places you
+					can board/bike without fees, bus schedules, and rideshare information.
+				</p>
+			</li>
+			<li>
+				<strong>
+					<u>Locate Lot:</u>
+				</strong>{" "}
+				<p style={{ display: "inline-block" }}>
+					Need to know the best parking lot for your schedule? <br />
+					Find the closest lot based on the building you want to go to by
+					searching or selecting it from our list.
+				</p>
+			</li>
+			<li>
+				<strong>
+					<u>Calculate:</u>
+				</strong>{" "}
+				<p style={{ display: "inline-block" }}>
+					Paying for parking, but not sure if your getting the best deal?
+					<br />
+					Try our parking calculator to find out if you can save some money
+					during your semester.
+				</p>{" "}
+			</li>
+		</ul>
+	</div>
 );
 
 function Homepage() {

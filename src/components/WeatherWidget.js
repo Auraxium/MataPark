@@ -1,6 +1,21 @@
 import React from "react";
 
 export default class WeatherWidget extends React.PureComponent {
+	componentDidMount() {
+		this.loadScript();
+	}
+
+	componentDidUpdate() {
+		this.loadScript();
+	}
+
+	loadScript() {
+		const script = document.createElement("script");
+		script.src = "https://weatherwidget.io/js/widget.min.js";
+		script.async = true;
+		document.body.appendChild(script);
+	}
+
 	render() {
 		return (
 			<div className={this.props.className || ""}>
@@ -16,19 +31,6 @@ export default class WeatherWidget extends React.PureComponent {
 				>
 					CSU - NORTHRIDGE WEATHER
 				</a>
-
-				{
-					!(function (d, s, id) {
-						var js,
-							fjs = d.getElementsByTagName(s)[0];
-						// if (!d.getElementById(id)) {
-						js = d.createElement(s);
-						js.id = id;
-						js.src = "https:weatherwidget.io/js/widget.min.js";
-						fjs.parentNode.insertBefore(js, fjs);
-						// }
-					})(document, "script", "weatherwidget-io-js")
-				}
 			</div>
 		);
 	}

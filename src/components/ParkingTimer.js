@@ -21,19 +21,6 @@ function ParkingTimer() {
 	const dateWithoutTime = tomorrow.toLocaleDateString("en-US", dateOptions);
 	// const currentTime = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
-	// useEffect(() => {
-	// 	const savedState = localStorage.getItem('countdownState');
-	// 	if (savedState) {
-	// 	  const { hours: savedHours} = JSON.parse(savedState);
-	// 	  console.log(savedHours);
-	// 	  setHours(savedHours);
-	// 	}
-	//   }, []);
-
-	// useEffect(() => {
-	// 	localStorage.setItem('countdownState', JSON.stringify({renderer}));
-	//   }, [hours]);
-
 	const btnClick = () => {
 		setIsActive(!isActive);
 	};
@@ -110,7 +97,7 @@ function ParkingTimer() {
 			return <Completionist />;
 		} else {
 			//Reminder at the 20 minutes
-			if (minutes === 15 && seconds === 0) {
+			if (minutes <= 15 && seconds === 0) {
 				setShowAlert(true);
 			}
 			// Render a countdown
@@ -119,8 +106,8 @@ function ParkingTimer() {
 					Time Left:
 					<br />
 					{hours > 0 && `${hours}:`}
-    				{hours > 0 || minutes > 0 ? `${minutes}:` : ''}
-    				{seconds}
+					{hours > 0 || minutes > 0 ? `${minutes}:` : ""}
+					{seconds}
 				</span>
 			);
 		}
@@ -131,14 +118,16 @@ function ParkingTimer() {
 				{showAlert && (
 					<WarningAlert
 						title="Reminder Alert"
-						message="You only have 20 minutes left before you ticket expires!"
+						message="You have less than 15 minutes left before you ticket expires!"
 					/>
 				)}
 			</div>
 			<div className="col">
 				<div className="text-center text-light mb-2 bg-warning py-4 rounded-3 border shadow">
-					<h1 className="fw-bold display-5">Parking Timer</h1>
-					<h3>Don't remember how long you parked your car? We got you!</h3>
+					<h1 className="fw-bold text-dark display-5">Parking Timer</h1>
+					<h3 className="text-dark">
+						Don't remember how long you parked your car? We got you!
+					</h3>
 				</div>
 				<div className="row text-center">
 					{/* Left Side of Screen - Parked on Campus */}
@@ -161,7 +150,9 @@ function ParkingTimer() {
 							<button
 								type="button"
 								className={
-									isActive ? "btn btn-warning text-light active" : "btn text-light btn-warning"
+									isActive
+										? "btn btn-warning text-dark active"
+										: "btn text-dark btn-warning"
 								}
 								onClick={(e) => {
 									btnClick();
@@ -175,7 +166,9 @@ function ParkingTimer() {
 							<button
 								type="button"
 								className={
-									isActive ? "btn btn-warning text-light active" : "btn text-light btn-warning"
+									isActive
+										? "btn btn-warning text-dark active"
+										: "btn text-dark btn-warning"
 								}
 								onClick={(e) => {
 									btnClick();
@@ -189,7 +182,9 @@ function ParkingTimer() {
 							<button
 								type="button"
 								className={
-									isActive ? "btn btn-warning text-light active" : "btn text-light btn-warning"
+									isActive
+										? "btn btn-warning text-dark active"
+										: "btn text-dark btn-warning"
 								}
 								onClick={(e) => {
 									btnClick();
@@ -203,7 +198,9 @@ function ParkingTimer() {
 							<button
 								type="button"
 								className={
-									isActive ? "btn btn-warning text-light active" : "btn text-light btn-warning"
+									isActive
+										? "btn btn-warning text-dark active"
+										: "btn text-dark btn-warning"
 								}
 								onClick={(e) => {
 									btnClick();
@@ -256,7 +253,7 @@ function ParkingTimer() {
 							<div className="col-auto">
 								<button
 									type="submit"
-									className="btn text-light btn-warning"
+									className="btn text-dark btn-warning"
 									value="Submit"
 								>
 									Submit
@@ -314,7 +311,7 @@ function ParkingTimer() {
 							<div className="col-auto">
 								<button
 									type="submit"
-									className="btn text-light btn-warning"
+									className="btn text-dark btn-warning"
 									value="Submit"
 								>
 									Submit
