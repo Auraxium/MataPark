@@ -4,6 +4,7 @@ import Clock from "react-live-clock";
 import axios from "axios";
 import port from "../port";
 import $ from "jquery";
+import AccountMenu from './AccountMenu'
 
 export default function Navbar() {
   let nav = useNavigate();
@@ -23,7 +24,7 @@ export default function Navbar() {
 
       <Clock className="col text-center" format={"h:mm:ss A"} ticking={true} timezone={"US/Pacific"} style={{ fontSize: "1.5em" }} />
 
-      <div className="col row justify-content-end  mx-0">
+      <div className="col row justify-content-end mx-0">
         <h2
           className="col-auto nav-names"
           style={{ cursor: "pointer" }}
@@ -36,8 +37,7 @@ export default function Navbar() {
                 .then((ax) => (window.location.href = ax.data.url))
                 .catch(console.log);
             } else {
-              localStorage.removeItem("googToken");
-              $(".nav-names").html("Logged out");
+              React.render(<AccountMenu/>)
             }
           }}
         >
