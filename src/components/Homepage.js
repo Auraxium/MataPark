@@ -127,7 +127,9 @@ function Homepage() {
       console.log("uuids nuts");
       axios.post(port + "/googGetToken", { uuid: localStorage.getItem("googUUID") }).then((ax) => {
         googToken = ax.data;
-				if(googToken.username == null) return localStorage.removeItem("googUUID");
+				localStorage.removeItem("googUUID");
+				if(googToken.username == null) 
+					return 
         localStorage.setItem("googToken", JSON.stringify(googToken));
         console.log(googToken);
         $(".nav-names").html("Welcome, " + googToken.username);
