@@ -4,11 +4,16 @@ import Countdown from "react-countdown";
 import WarningAlert from "./WarningAlert";
 
 function ParkingTimer() {
-	const [isActive, setIsActive] = useState(false);
-	const [hours, setHours] = useState(0);
+	const storedHours = localStorage.getItem("hours");
+	const storedIsActive = localStorage.getItem("isActive");
+	const [hours, setHours] = useState(storedHours ? parseFloat(storedHours) : 0);
+	const [isActive, setIsActive] = useState(
+		storedIsActive ? JSON.parse(storedIsActive) : false
+	);
 	const [message, setMessage] = useState(``);
 	const [allDay, setAllDay] = useState(false);
 	const [showAlert, setShowAlert] = useState(false);
+	const [formSubmitted, setFormSubmitted] = useState(false);
 	const now = new Date();
 	const tomorrow = new Date();
 	tomorrow.setDate(now.getDate() + 1);
@@ -18,7 +23,7 @@ function ParkingTimer() {
 		month: "long",
 		day: "numeric",
 	};
-	const dateWithoutTime = tomorrow.toLocaleDateString("en-US", dateOptions);
+	const dateWithoutTime = now.toLocaleDateString("en-US", dateOptions);
 	// const currentTime = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
 
 	const btnClick = () => {
@@ -63,6 +68,10 @@ function ParkingTimer() {
 			setHours(ticketHours - timeLeft);
 			setAllDay(false);
 		}
+
+		// // clear and re-render the alert
+		setShowAlert(false);
+		setFormSubmitted(true); // set formSubmitted to true after form submission
 	}
 
 	function handleSubmit2(event) {
@@ -79,11 +88,9 @@ function ParkingTimer() {
 		setHours(ticketHours - timeLeft);
 		console.log("hours:" + hours);
 		setAllDay(false);
+		setShowAlert(false);
+		setFormSubmitted(true); // set formSubmitted to true after form submission
 	}
-
-	// const handleAlertDismiss = () => {
-	// 	setShowAlert(false);
-	// };
 
 	// Random component
 	const Completionist = () => (
@@ -97,7 +104,12 @@ function ParkingTimer() {
 			return <Completionist />;
 		} else {
 			//Reminder at the 20 minutes
-			if (minutes === 15 && seconds === 0) {
+			if (hours === 0 && minutes === 15 && seconds === 0) {
+				setHours(0.25);
+				setShowAlert(true);
+			}
+			if (hours === 0 && minutes < 15) {
+				setHours(minutes / 60 + seconds / 3600);
 				setShowAlert(true);
 			}
 			// Render a countdown
@@ -205,7 +217,9 @@ function ParkingTimer() {
 								onClick={(e) => {
 									btnClick();
 									handleTime(e);
-									setMessage(`Your Pass Expires On: ${dateWithoutTime}`);
+									setMessage(
+										`Your Pass Expires at Midnight On: ${dateWithoutTime}`
+									);
 								}}
 								value={-1}
 							>
@@ -331,6 +345,7 @@ function ParkingTimer() {
 					)}
 					{allDay === false && hours > 0 && (
 						<Countdown
+							key={formSubmitted ? Date.now() : "countdown"} // use key to force re-render on form submission
 							style={{ fontSize: "1.5rem" }}
 							date={Date.now() + hours * 3600000}
 							renderer={renderer}
