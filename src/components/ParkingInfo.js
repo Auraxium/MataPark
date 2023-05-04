@@ -95,13 +95,22 @@ function ParkingInfo() {
 						<s>Faculty & Staff Parking</s> -&gt; Coming Soon
 					</a>
 				</h6>
-				<h3 id="Students"> Student Parking Tips and Need to Knows</h3>
+				<p id="Students"></p>
+				<br />
+				<br />
+				<h3> Student Parking Tips and Need to Knows</h3>
 				<p>
 					Students can purchase a semester permit or a daily parking permit to
 					park. <br />
 					Prices are: (0-2hr) $5.50, (2-4hr) $7.50, and All Day $9.50. <br />
 					Kiosk only take Mastercard or Visa.
 					<br />
+					If you only have cash go to an Information Booth: <br />
+					<ul style={{ listStyleType: "none" }}>
+						<li>Booth #1 is located on Lindley Avenue off Nordhoff Street.</li>
+						<li>Booth #2 is located on Prairie Street off Darby Avenue.</li>
+						<li>Booth #3 is located on Prairie Street off Zelzah Avenue.</li>
+					</ul>
 					Student parking lots are:{" "}
 				</p>
 				<ul>
@@ -180,13 +189,96 @@ function ParkingInfo() {
 					</tbody>
 				</table>
 				<br />
+				<p id="Visitor"></p>
+				<br />
+				<br />
+				<h3> Visitor Parking Tips and Need to Knows</h3>
+				<p>
+					Similiar to Students, you can purchase a daily parking permit to park
+					at the same lots as students (please look at list in Student Section).{" "}
+					<br />
+					Prices are: (0-2hr) $5.50, (2-4hr) $7.50, and All Day $9.50. <br />
+					Kiosk only take Mastercard or Visa.
+					<br />
+					If you only have cash go to an Information Booth: <br />
+					<ul style={{ listStyleType: "none" }}>
+						<li>Booth #1 is located on Lindley Avenue off Nordhoff Street.</li>
+						<li>Booth #2 is located on Prairie Street off Darby Avenue.</li>
+						<li>Booth #3 is located on Prairie Street off Zelzah Avenue.</li>
+					</ul>
+					You also can take advantage of Pay by Space Parking, Stalls that are
+					for those visiting campus for a short period of time. <br />
+					These parking stalls are located in lots B4, D1, F2, and G3 Surface
+					lot and can be activated by paying with coins, cash or debit/credit
+					cards.
+				</p>
 
-				<h3 id="Visitor"> Visitor Parking Tips and Need to Knows</h3>
+				<div class="d-flex justify-content-between align-items-center">
+					<h5 class="mb-0">
+						<em>Parking Tips for Year-Round Vistors:</em>
+					</h5>
+					<button class="btn btn-sm btn-danger" onClick={handleSuggestion}>
+						Got a Hot Tip? Suggest it Here!
+					</button>
+				</div>
+				<table>
+					<tbody>
+						<tr>
+							<td>
+								Picking up or dropping off a student? If it's brief, feel free
+								to do so on any of the University Drives (North,West, or East),
+								but if it will be longer or it's a bosy day, opt to meet your
+								student on a side street or in the front lot of a parking
+								structure like G3, B3, or B5. Typically this is not as crowded.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								The Campus is larger than you may think - make sure where you
+								park is close to the event or building you are trying to get to.
+								Try our Locate Lot Feature if you want to know the closest
+								parking lot to the building you plan to be at.
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<strong>Special Events</strong>
+								<br />
+								If you are visiting for a Graduation or Honors Convocation,
+								these ceremonies will take place on the University Library Lawn
+								in the middle of campus.
+								<br />
+								The most convenient parking is on the west side of the campus
+								(Lots B1, B2 and the B3 parking structure). It's best to enter
+								the campus at Nordhoff St. and Darby Ave. and follow the signs
+								to the closest available parking. <br />
+								Please make sure to come early so you have time to find parking
+								and make corrections if things get confusing. Lot G3, G4, F5,
+								and F6 will also be open if you prefer parking on the eastside
+								of campus, but it won't be as close in walking distance!
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<br />
+				<p id="Staff"></p>
+				<br />
+				<br />
+				<h3>Faculty & Staff Parking Tips and Need to Knows -- Coming Soon!</h3>
+				<p>
+					Faculty and Staff tips coming soon.{" "}
+					<button class="btn btn-sm btn-danger" onClick={handleSuggestion}>
+						Part of Staff or Faculty? Suggest Tips Here!
+					</button>
+				</p>
 
-				<h3 id="Staff">
-					{" "}
-					Faculty & Staff Parking Tips and Need to Knows -- Coming Soon!
-				</h3>
+				<table>
+					<tbody>
+						<tr>
+							<td>Coming Soon...</td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 		</>
 	);
