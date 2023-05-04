@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
 import { Carousel } from "react-carousel-minimal";
 import "../styles/ParkingInfo.css";
 import B5 from "./Images/B5_Feb2023.jpg";
@@ -34,6 +34,16 @@ const slideNumberStyle = {
 	fontSize: "20px",
 	fontWeight: "bold",
 };
+
+function handleSuggestion() {
+	const email = "matapark2022@gmail.com";
+	const subject = "Matapark Suggestion - Parking Tips";
+	const body = "Please enter your suggestion here.";
+	const mailtoUrl = `mailto:${email}?subject=${encodeURIComponent(
+		subject
+	)}&body=${encodeURIComponent(body)}`;
+	window.location.href = mailtoUrl;
+}
 
 function ParkingInfo() {
 	return (
@@ -80,13 +90,19 @@ function ParkingInfo() {
 				</div>
 				<h6 id="nav" align="center">
 					<a href="#Students">Student Parking </a>|
-					<a href="#"> Visitor Parking </a>|
-					<a href="#"> Faculty & Staff Parking</a>
+					<a href="#Visitor"> Visitor Parking </a>|
+					<a href="#Staff">
+						<s>Faculty & Staff Parking</s> -&gt; Coming Soon
+					</a>
 				</h6>
 				<h3 id="Students"> Student Parking Tips and Need to Knows</h3>
 				<p>
 					Students can purchase a semester permit or a daily parking permit to
-					park. Student parking lots are:{" "}
+					park. <br />
+					Prices are: (0-2hr) $5.50, (2-4hr) $7.50, and All Day $9.50. <br />
+					Kiosk only take Mastercard or Visa.
+					<br />
+					Student parking lots are:{" "}
 				</p>
 				<ul>
 					<li>
@@ -104,9 +120,15 @@ function ParkingInfo() {
 						Housing residents, ONLY.{" "}
 					</li>
 				</ul>
-				<h5>
-					<em>Parking Tips for Beginning of Semester:</em>
-				</h5>
+				<div class="d-flex justify-content-between align-items-center">
+					<h5 class="mb-0">
+						<em>Parking Tips for Beginning of Semester:</em>
+					</h5>
+					<button class="btn btn-sm btn-danger" onClick={handleSuggestion}>
+						Got a Hot Tip? Suggest it Here!
+					</button>
+				</div>
+
 				<table>
 					<tbody>
 						<tr>
@@ -117,18 +139,18 @@ function ParkingInfo() {
 						</tr>
 						<tr>
 							<td>
-								If your strapped for cash - street parking may be the way to go,
-								but it will cost you in distance and time so be early or a quick
-								walker!
+								If you're strapped for cash - street parking may be the way to
+								go, but it will cost you in distance and time so be early or a
+								quick walker!
 							</td>
 						</tr>
 						<tr>
 							<td>
 								If you love convenience more than saving a few bucks, opt for
 								daily parking in one of the lots. Lots that have heavy traffic
-								like E6 may be completely full the first few weeks of class so
-								try to get in early (before 9am) or much later in the day (late
-								afternoon).
+								like G3 or E6 may be completely full the first few weeks of
+								class so try to get in early (before 9am) or much later in the
+								day (late afternoon).
 							</td>
 						</tr>
 						<tr>
@@ -145,35 +167,26 @@ function ParkingInfo() {
 								your class starts to wait in that line.
 							</td>
 						</tr>
+						<tr>
+							<td>
+								All Day parking passes on campus are not 24 hours, they only
+								last until the end of the day. So if you plan to buy one for all
+								day, make sure you get the most out of the 4+ hours paid for.
+								All Day is benefical if you have several class back to back,
+								plan to come and go from campus several times in a day or an
+								extracurricular needing you on campus longer.
+							</td>
+						</tr>
 					</tbody>
 				</table>
 				<br />
 
-				{/* List version */}
-				{/* <ul>
-					<li>
-						Many students generally will choose daily parking or park on the
-						streets for the first few weeks of school.
-					</li>
-					<hr className="short-hr" />
-					<li>
-						If your strapped for cash - street parking may be the way to go, but
-						it will cost you in distance and time so be early or a quick walker!
-					</li>{" "}
-					<hr className="short-hr" />
-					<li>
-						If you love convenience more than saving a few bucks, opt for daily
-						parking in one of the lots. Lots that have heavy traffic like E6 may
-						be completely full the first few weeks of class so try to get in
-						early (before 9am) or much later in the day (late afternoon).
-					</li>
-					<hr className="short-hr" />
-					<li>
-						Don't want to risk going to a full lot? choose a parking structure
-						like B3 or B5 instead. You may not get a spot near the elevators,
-						but you will find a spot!
-					</li>
-				</ul> */}
+				<h3 id="Visitor"> Visitor Parking Tips and Need to Knows</h3>
+
+				<h3 id="Staff">
+					{" "}
+					Faculty & Staff Parking Tips and Need to Knows -- Coming Soon!
+				</h3>
 			</div>
 		</>
 	);
