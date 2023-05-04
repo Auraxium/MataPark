@@ -107,33 +107,32 @@ const Notif = ({ href, content }) => (
     <a className="notify" href={href}>
       {content}
     </a>
-	<hr/>
+    <hr />
   </li>
 );
 
 const Service = ({ click, name }) => (
-	<button className="btn btn-danger col-10" onClick={click}>
-		{name}
-	</button>
+  <button className="btn btn-danger col-10" onClick={click}>
+    {name}
+  </button>
 );
 
 function Homepage() {
   let nav = useNavigate();
   var [main, SetMain] = useState(MiddleContent);
 
-  const Tab = ({ content, name }) => (
-    <div
-      className="col-3 py-4"
-      onClick={(e) => {
-        SetMain(content);
-        // $(".highlight").removeClass("highlight");
-        $(this).addClass("highlight");
-      }}
-    >
+  const Tab = ({ content, name, click }) => (
+    <div className="col-3 py-4" onClick={click}>
       {name}
     </div>
   );
 
+  var tabclick = (event, content) => {
+    console.log(event.target);
+    // $(".highlight").removeClass("highlight");
+    $(event.target).addClass("highlight");
+    SetMain(content);
+  };
 
   useEffect(() => {
     let googToken;
@@ -147,11 +146,17 @@ function Homepage() {
         localStorage.setItem("googToken", JSON.stringify(googToken));
         console.log(googToken);
         $(".nav-names").html("Welcome, " + googToken.username);
-      });
+        axios.post(port + '/saveData', {_id: googToken.googleId, data: {username: googToken.username}}).catch(err => console.log(err))
+    });
     } else if (localStorage.getItem("googToken")) {
       googToken = JSON.parse(localStorage.getItem("googToken"));
       if (!googToken.username) return localStorage.removeItem("googToken");
-      $(".nav-names").html("Welcome, " + googToken.username);
+      axios.post(port + '/loadData').then(data => {
+        let account = data.data;
+        console.log(account)
+        //process data here
+       $(".nav-names").html("Welcome, " + googToken.username);
+      }).catch(err => console.log(err))
     }
   }, []);
 
@@ -160,7 +165,13 @@ function Homepage() {
       {/* <AccountMenu /> */}
       <div className="col-m-11">
         <div className="d-flex m-0 text-center text-white bg-black tab-header">
-          <Tab content={<MiddleContent />} name={"Home"} />
+          <Tab
+            content={<MiddleContent />}
+            name={"Home"}
+            click={(event) => {
+              console.log(event);
+            }}
+          />
           <Tab content={<ParkingInfo />} name={"Parking Information"} />
           <Tab content={<ParkingAvailability />} name={"Parking Availability"} />
           <Tab content={<EVTransportation />} name={"E.V & Transportation"} />
@@ -219,10 +230,10 @@ function Homepage() {
             </div>
             <div className="notifications">
               <ul style={{ fontSize: "16px", color: "white" }}>
-								<Notif href={'http://www.csun.edu/sites/default/files/LetterFromTheVicePresidentOfAdmin%26Finance.pdf'} content={'A Message from Colin Donahue, Vice President for Administration Finance:Parking Permit Increase Notification'} />
-								<Notif href={'http://www.csun.edu/sites/default/files/Parking%20Update%20-%20Los%20Angeles%20Mayor%20Eric%20Garcetti%27s%20State%20Of%20The%20City%20-%204%2014%202015_0.pdf'} content={' Parking Update: Los Angeles Mayor Eric Garcetti\'s State Of The City'} />
-								<Notif href={'http://www.csun.edu/sites/default/files/B5%20Parking%20Lot%20Maintenance%20-%204%208%202015.pdf'} content={'B5 Slurry Closure and Parking Lot Maintenance 4/8/2015'} />
-								<Notif href={'http://www.csun.edu/sites/default/files/B5%20slurry%20closure%20map_rev%20040315_4_0.pdf'} content={'B5 Structure Closure Slurry Project'} />
+                <Notif href={"http://www.csun.edu/sites/default/files/LetterFromTheVicePresidentOfAdmin%26Finance.pdf"} content={"A Message from Colin Donahue, Vice President for Administration Finance:Parking Permit Increase Notification"} />
+                <Notif href={"http://www.csun.edu/sites/default/files/Parking%20Update%20-%20Los%20Angeles%20Mayor%20Eric%20Garcetti%27s%20State%20Of%20The%20City%20-%204%2014%202015_0.pdf"} content={" Parking Update: Los Angeles Mayor Eric Garcetti's State Of The City"} />
+                <Notif href={"http://www.csun.edu/sites/default/files/B5%20Parking%20Lot%20Maintenance%20-%204%208%202015.pdf"} content={"B5 Slurry Closure and Parking Lot Maintenance 4/8/2015"} />
+                <Notif href={"http://www.csun.edu/sites/default/files/B5%20slurry%20closure%20map_rev%20040315_4_0.pdf"} content={"B5 Structure Closure Slurry Project"} />
               </ul>
             </div>
             {/* <iframe src="https://example.org" 

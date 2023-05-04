@@ -26,7 +26,7 @@ export default function Navbar() {
 
       <div className="col row justify-content-end mx-0">
         <h2
-          className="col-auto nav-names"
+          className="col-auto nav-names text-end"
           style={{ cursor: "pointer" }}
           onClick={() => {
             if (!localStorage.getItem("googToken")) {
@@ -37,7 +37,8 @@ export default function Navbar() {
                 .then((ax) => (window.location.href = ax.data.url))
                 .catch(console.log);
             } else {
-              React.render(<AccountMenu/>)
+              localStorage.removeItem('googToken');
+              $(".nav-names").html("Logged Out");
             }
           }}
         >
