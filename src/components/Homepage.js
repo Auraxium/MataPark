@@ -121,8 +121,8 @@ function Homepage() {
   let nav = useNavigate();
   var [main, SetMain] = useState(MiddleContent);
 
-  const Tab = ({ content, name, click }) => (
-    <div className="col-3 py-4" onClick={click}>
+  const Tab = ({ content, name }) => (
+    <div className="col-3 py-4" onClick={() => SetMain(content)}>
       {name}
     </div>
   );
@@ -170,10 +170,12 @@ function Homepage() {
             content={<MiddleContent />}
             name={"Home"}
             click={(event) => {
-              console.log(event);
+              
             }}
           />
-          <Tab content={<ParkingInfo />} name={"Parking Information"} />
+          <Tab content={<ParkingInfo />} name={"Parking Information"} click={(event) => {
+              console.log(event);
+            }}/>
           <Tab content={<ParkingAvailability />} name={"Parking Availability"} />
           <Tab content={<EVTransportation />} name={"E.V & Transportation"} />
         </div>
