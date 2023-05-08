@@ -155,6 +155,7 @@ function Homepage() {
         let account = data.data;
         console.log(account)
         //process data here
+        axios(port + '/saveData', {_id: account._id, data: {}})
        $(".nav-names").html("Welcome, " + googToken.username);
       }).catch(err => console.log(err))
     }
@@ -222,6 +223,7 @@ function Homepage() {
               <Service click={() => (window.location.href = "https://www.csun.edu/sites/default/files/student_refund_schedule_2022-2023.pdf")} name={"Purchase Semester Pass"} />
               <Service click={() => nav("/Calculate")} name={"Calculate"} />
               <Service click={() => nav("/ParkingTimer")} name={"Parking Timer"} />
+              <Service click={() => axios(port + '/saveData', JSON.parse(localStorage.getItem("googToken"))).then(res => console.log(res))} name={"Save"} />
             </div>
             <br />
             {/* Notifications - Placeholder */}
