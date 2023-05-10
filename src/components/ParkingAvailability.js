@@ -6,6 +6,7 @@ import port from "../port.js";
 import $ from "jquery";
 import "../styles/ParkingAvailability.css";
 import SpotAngel from "./SpotAngel.js";
+import B3Parking from "./Images/B3_Parking.jpg";
 
 const Lot = (props) => (
 	<div className="d-flex ">
@@ -54,14 +55,21 @@ function ParkingAvailability() {
 
 	return (
 		<>
-			<div className="d-flex justify-content-center align-items-center gx-2">
+			<img
+				src={B3Parking}
+				alt="B3 Parking"
+				position="absolute"
+				width="40%"
+				style={{ display: "block", margin: "10px auto", aspectRatio: "3/4" }}
+			/>
+			<div className="d-flex justify-content-center align-items-center gx-2 m-2">
 				<div className="px-2" style={{ fontSize: "25px" }}>
 					Parking Availability
 				</div>
 				<span className="loader" ref={loadSpinner}></span>
 			</div>
 
-			<div id="lots">
+			<div id="lots" className="m-2">
 				{!lots
 					? "server broke :("
 					: lots.map((e) => (
@@ -69,7 +77,7 @@ function ParkingAvailability() {
 					  ))}
 			</div>
 
-			<div className="justify-content-center text-center align-items-center pt-5">
+			<div className="justify-content-center text-center align-items-center pt-5 m-2">
 				<div className="px-2" style={{ fontSize: "25px" }}>
 					Street Parking Availability
 				</div>

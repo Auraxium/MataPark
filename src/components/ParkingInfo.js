@@ -48,7 +48,7 @@ function handleSuggestion() {
 function ParkingInfo() {
 	return (
 		<>
-			<div className="">
+			<div className="m-3">
 				<div className="" style={{ fontSize: "27px" }}>
 					<h1>Parking Information</h1>
 				</div>
