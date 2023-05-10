@@ -168,7 +168,7 @@ function ParkingTimer() {
 				{isMobile ? (
 					<>
 						{/* Left Side of Screen - Parked on Campus */}
-						<div className="col mt-4" style={{ height: "40vh" }}>
+						<div className="col mt-4">
 							<p className="">
 								<strong>If you parked on campus:</strong> <br />
 								Press the button corresponding to the hours for your ticket to
