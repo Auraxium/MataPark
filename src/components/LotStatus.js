@@ -4,13 +4,13 @@ import port from "../port";
 
 const LotStatus = () => {
 	const [lots, setLots] = useState([
-		{ name: "B1", status: "", reportTime: "" },
-		{ name: "B6", status: "", reportTime: "" },
-		{ name: "E6", status: "", reportTime: "" },
-		{ name: "F5", status: "", reportTime: "" },
-		{ name: "F10", status: "", reportTime: "" },
-		{ name: "G3", status: "", reportTime: "" },
-		{ name: "G12", status: "", reportTime: "" },
+		{ lotId: "B1", status: "OK", reportTime: "" },
+		{ lotId: "B6", status: "OK", reportTime: "" },
+		{ lotId: "E6", status: "OK", reportTime: "" },
+		{ lotId: "F5", status: "OK", reportTime: "" },
+		{ lotId: "F10", status: "OK", reportTime: "" },
+		{ lotId: "G3", status: "OK", reportTime: "" },
+		{ lotId: "G12", status: "OK", reportTime: "" },
 	]);
 
 	useEffect(() => {
@@ -32,7 +32,7 @@ const LotStatus = () => {
 
 		// Send POST request to save data
 		const lotData = {
-			lotId: newLots[index].name,
+			lotId: newLots[index].lotId,
 			status,
 			reportTime: currentTime,
 		};
@@ -61,8 +61,8 @@ const LotStatus = () => {
 				</thead>
 				<tbody>
 					{lots.map((lot, index) => (
-						<tr key={lot.name}>
-							<td>{lot.name}</td>
+						<tr key={lot.lotId}>
+							<td>{lot.lotId}</td>
 							<td>{lot.status}</td>
 							<td>{lot.reportTime}</td>
 							<td>
