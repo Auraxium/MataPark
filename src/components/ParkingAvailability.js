@@ -7,6 +7,7 @@ import $ from "jquery";
 import "../styles/ParkingAvailability.css";
 import SpotAngel from "./SpotAngel.js";
 import B3Parking from "./Images/B3_Parking.jpg";
+import LotStatus from './LotStatus';
 
 const Lot = (props) => (
 	<div className="d-flex ">
@@ -76,6 +77,8 @@ function ParkingAvailability() {
 							<Lot lot={e.lot} slots={e.slots} key={crypto.randomUUID()} />
 					  ))}
 			</div>
+
+			<LotStatus />
 
 			<div className="justify-content-center text-center align-items-center pt-5 m-2">
 				<div className="px-2" style={{ fontSize: "25px" }}>
