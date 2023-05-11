@@ -18,7 +18,8 @@ const LotStatus = () => {
 			.get(port + "/loadLotStatus")
 			.then((response) => {
 				const lotData = response.data;
-				setLots(lotData);
+				if(lotData)
+					 setLots(lotData);
 			})
 			.catch((error) => console.log(error));
 	}, []);
