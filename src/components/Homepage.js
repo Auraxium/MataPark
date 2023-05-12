@@ -180,14 +180,14 @@ function Homepage() {
 		} else if (localStorage.getItem("googToken")) {
 			googToken = JSON.parse(localStorage.getItem("googToken"));
 			if (!googToken.username) return localStorage.removeItem("googToken");
+			$(".nav-names").html("Welcome, " + googToken.username);
 			axios
 				.post(port + "/loadData")
 				.then((data) => {
 					let account = data.data;
 					console.log(account);
 					//process data here
-					axios(port + "/saveData", { _id: account._id, data: {} });
-					$(".nav-names").html("Welcome, " + googToken.username);
+					// axios(port + "/saveData", { _id: account._id, data: {} });
 				})
 				.catch((err) => console.log(err));
 		}
