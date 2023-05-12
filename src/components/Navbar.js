@@ -12,8 +12,8 @@ export default function Navbar() {
 	let nav = useNavigate();
 	return (
 		<div
-			className="navb bg-danger mb-2 p-1 d-flex text-white align-items-center"
-			style={{ margin: 0, padding: 0, width: "100vw" }}
+			className="navb bg-danger mb-2 p-1 d-flex text-white align-items-center sticky-top"
+			style={{ margin: 0, padding: 0, width: "100vw", height: '70px' }}
 		>
 			<div className="col row">
 				<h1

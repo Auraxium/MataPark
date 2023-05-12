@@ -144,7 +144,7 @@ function Homepage() {
           if (googToken.username == null) return;
           localStorage.setItem("googToken", JSON.stringify(googToken));
           console.log(googToken);
-          $(".nav-names").html("Welcome, " + googToken.username);
+          $(".nav-names").html(googToken.username);
           axios
             .post(port + "/saveData", {
               _id: googToken.googleId,
