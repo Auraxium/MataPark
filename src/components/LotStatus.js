@@ -4,13 +4,13 @@ import port from "../port";
 
 const LotStatus = () => {
 	const [lots, setLots] = useState([
-		{ lotId: "B1", status: "OK", reportTime: "" },
-		{ lotId: "B6", status: "OK", reportTime: "" },
-		{ lotId: "E6", status: "OK", reportTime: "" },
-		{ lotId: "F5", status: "OK", reportTime: "" },
-		{ lotId: "F10", status: "OK", reportTime: "" },
-		{ lotId: "G3", status: "OK", reportTime: "" },
-		{ lotId: "G12", status: "OK", reportTime: "" },
+		{ lotId: "B1", status: "OK", reportTime: "5/11/2023, 10:22:30 PM" },
+		{ lotId: "B6", status: "OK", reportTime: "5/11/2023, 10:18:14 PM" },
+		{ lotId: "E6", status: "OK", reportTime: "5/11/2023, 10:22:25 PM" },
+		{ lotId: "F5", status: "OK", reportTime: "5/11/2023, 10:02:20 PM" },
+		{ lotId: "F10", status: "OK", reportTime: "5/11/2023, 10:22:25 PM" },
+		{ lotId: "G3", status: "OK", reportTime: "5/11/2023, 9:50:05 PM" },
+		{ lotId: "G12", status: "OK", reportTime: "5/11/2023, 9:42:00 PM" },
 	]);
 
 	useEffect(() => {

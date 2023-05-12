@@ -267,8 +267,14 @@ function Homepage() {
 									Online Parking Services
 								</Dropdown.Toggle>
 								<Dropdown.Menu>
-									<Dropdown.Item onClick={() => nav("/BuyDailyPass")}>
+									{/* <Dropdown.Item onClick={() => nav("/BuyDailyPass")}>
 										Buy Daily Pass
+									</Dropdown.Item> */}
+									<Dropdown.Item onClick={() => nav("/Calculate")}>
+										Semester Pass Calculator
+									</Dropdown.Item>
+									<Dropdown.Item onClick={() => nav("/ParkingTimer")}>
+										Parking Timer
 									</Dropdown.Item>
 									<Dropdown.Item onClick={() => nav("/LocateLot")}>
 										Locate Lot
@@ -281,13 +287,7 @@ function Homepage() {
 									>
 										Official Semester Pass Prices
 									</Dropdown.Item>
-									<Dropdown.Item onClick={() => nav("/Calculate")}>
-										Semester Pass Calculator
-									</Dropdown.Item>
-									<Dropdown.Item onClick={() => nav("/ParkingTimer")}>
-										Parking Timer
-									</Dropdown.Item>
-									<Dropdown.Item
+									{/* <Dropdown.Item
 										onClick={() =>
 											axios(
 												port + "/saveData",
@@ -296,7 +296,7 @@ function Homepage() {
 										}
 									>
 										Save Account
-									</Dropdown.Item>
+									</Dropdown.Item> */}
 								</Dropdown.Menu>
 							</Dropdown>
 						</div>
@@ -425,9 +425,17 @@ function Homepage() {
 									Online Parking Services
 								</div>
 								<div className="row justify-content-center gy-1 btn-text">
-									<Service
+									{/* <Service
 										click={() => nav("/BuyDailyPass")}
 										name={"Buy Daily Pass"}
+									/> */}
+									<Service
+										click={() => nav("/Calculate")}
+										name={"Semester Pass Calculator"}
+									/>
+									<Service
+										click={() => nav("/ParkingTimer")}
+										name={"Parking Timer"}
 									/>
 									<Service
 										click={() => nav("/LocateLot")}
@@ -440,15 +448,7 @@ function Homepage() {
 										}
 										name={"Official Semester Pass Prices"}
 									/>
-									<Service
-										click={() => nav("/Calculate")}
-										name={"Semester Pass Calculator"}
-									/>
-									<Service
-										click={() => nav("/ParkingTimer")}
-										name={"Parking Timer"}
-									/>
-									<Service
+									{/* <Service
 										click={() =>
 											axios(
 												port + "/saveData",
@@ -456,7 +456,7 @@ function Homepage() {
 											).then((res) => console.log(res))
 										}
 										name={"Save"}
-									/>
+									/> */}
 								</div>
 								<br />
 							</>
@@ -509,6 +509,46 @@ function Homepage() {
 						)}
 						{isMobile ? (
 							<>
+							<div
+									className="text-center mb-1 h2"
+									style={{ fontSize: "27px" }}
+								>
+									Latest Parking Notifications
+								</div>
+								<div className="notifications">
+									<ul style={{ fontSize: "16px", color: "white" }}>
+										<Notif
+											href={
+												"http://www.csun.edu/sites/default/files/LetterFromTheVicePresidentOfAdmin%26Finance.pdf"
+											}
+											content={
+												"A Message from Colin Donahue, Vice President for Administration Finance:Parking Permit Increase Notification"
+											}
+										/>
+										<Notif
+											href={
+												"http://www.csun.edu/sites/default/files/Parking%20Update%20-%20Los%20Angeles%20Mayor%20Eric%20Garcetti%27s%20State%20Of%20The%20City%20-%204%2014%202015_0.pdf"
+											}
+											content={
+												" Parking Update: Los Angeles Mayor Eric Garcetti's State Of The City"
+											}
+										/>
+										<Notif
+											href={
+												"http://www.csun.edu/sites/default/files/B5%20Parking%20Lot%20Maintenance%20-%204%208%202015.pdf"
+											}
+											content={
+												"B5 Slurry Closure and Parking Lot Maintenance 4/8/2015"
+											}
+										/>
+										<Notif
+											href={
+												"http://www.csun.edu/sites/default/files/B5%20slurry%20closure%20map_rev%20040315_4_0.pdf"
+											}
+											content={"B5 Structure Closure Slurry Project"}
+										/>
+									</ul>
+								</div>
 								<div className="row text-muted">
 									<div className="col-3 text-center">
 										<em>{`Contact Us`}</em>
