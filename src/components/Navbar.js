@@ -12,7 +12,7 @@ export default function Navbar() {
 	let nav = useNavigate();
 	return (
 		<div
-			className="bg-danger mb-2 p-1 row d-flex text-white align-items-center sticky-top"
+			className="navb bg-danger mb-2 p-1 d-flex text-white align-items-center"
 			style={{ margin: 0, padding: 0, width: "100vw" }}
 		>
 			<div className="col row">

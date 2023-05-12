@@ -69,13 +69,11 @@ export default function LocateLot() {
   return (
     <>
       <div className="container lead row mx-0">
-	  <h1 className="fw-bold display-5">Locate Lot</h1>
-        <div className="col-auto ">
+	  <h1 className="fw-bold text-center display-5">Locate Lot</h1>
+        <div className=" ">
           <img
-            className=""
+            className="csun-map"
             src="https://www.csun.edu/sites/default/files/campus_map_1122021_960.jpg"
-            width={500}
-            height={500}
             alt=""
             style={{ objectFit: "none", objectPosition: "20% 90%" }}
           />
@@ -83,7 +81,10 @@ export default function LocateLot() {
           
         </div>
 
-        <div className="col-4">
+        <div className="col" style={{ fontSize: "40px" }} id="result"></div>
+
+
+        <div className="col-sm-12 col-xl-4 col-lg-4 col-md-4">
           <div className="font-big">Search building name</div>
           <input
             className="form-control mb-1"
@@ -103,7 +104,6 @@ export default function LocateLot() {
           </div>
         </div>
 
-        <div className="col" style={{ fontSize: "40px" }} id="result"></div>
       </div>
     </>
   );

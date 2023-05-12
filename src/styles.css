@@ -87,3 +87,14 @@ a.notify:hover{
 a.notify:visited{
 	color: whitesmoke;
 }
+
+.navb {
+	/* width: 100vw */
+}
+
+.csun-map {
+	width: 100%;
+	max-height: 500px;
+	height: auto;
+	object-fit: scale-down;
+}
