@@ -98,3 +98,7 @@ a.notify:visited{
 	height: auto;
 	object-fit: scale-down;
 }
+
+.ddd {
+	/* border: solid 3px red */
+}
