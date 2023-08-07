@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <Router>
-        <Navbar/>
+        <Navbar className='sticky-top'/>
         <Routes>
           <Route path='/' extact element={<Homepage/>} />
           <Route path='/BuyDailyPass' element={<BuyDailyPass/>} />

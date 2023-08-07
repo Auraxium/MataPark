@@ -1,16 +1,16 @@
 html, body {
-	/* margin: 0 !important;
+	margin: 0 !important;
 	padding: 0 !important;
 
 	height: 100vh !important;
-	width: 100vw !important; */
+	width: 100vw !important; 
 
-	/* display: flex !important;
-	flex-direction: column !important; */
+	display: flex !important;
+	flex-direction: column !important;
 
 	/* font-family: "Lucida Console", monospace !important; */
 
-	/* overflow: hidden; */
+	 /* overflow: hidden; */
 }
 
 * {
@@ -86,4 +86,21 @@ a.notify:hover{
 }
 a.notify:visited{
 	color: whitesmoke;
+}
+
+.navb {
+	width: 100vw
+	pos
+	
+}
+
+.csun-map {
+	width: 100%;
+	max-height: 500px;
+	height: auto;
+	object-fit: scale-down;
+}
+
+.ddd {
+	/* border: solid 3px red */
 }
