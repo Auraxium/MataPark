@@ -38,7 +38,7 @@ function ParkingAvailability() {
 		//localStorage.setItem("last-PA-request", now);
 
 		axios
-			.get("https://parking-map.auraxium.online/parkmap")
+			.get(port + "/parkmap")
 			.then((res) => {
 				localStorage.setItem("lots-cookie", JSON.stringify(res.data));
 				setLots(res.data.lots);
